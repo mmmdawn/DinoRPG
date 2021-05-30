@@ -9,7 +9,6 @@ import Game.SimpleRPG.tilegame.Handler;
 import Game.SimpleRPG.tilegame.entities.Entity;
 import Game.SimpleRPG.tilegame.gfx.Animation;
 import Game.SimpleRPG.tilegame.gfx.Assets;
-import Game.SimpleRPG.tilegame.inventory.Inventory;
 
 public class Player extends Creature {
 	
@@ -21,7 +20,6 @@ public class Player extends Creature {
 	private long  lastAttackTimer, attackCooldown = 100, attackTimer = attackCooldown;
 	
 	//inventory
-	private Inventory inventory;
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		bounds.x = 17;
@@ -39,7 +37,6 @@ public class Player extends Creature {
 		attack_right = new Animation(500, Assets.attack_right);
 		attack_down = new Animation(500, Assets.attack_down);
 		
-		inventory = new Inventory(handler);
 		
 		
 	
@@ -65,8 +62,6 @@ public class Player extends Creature {
 		//attack
 		checkAttacks();
 		
-		//inventory
-		inventory.tick();
 		
 	}
 	
@@ -75,8 +70,6 @@ public class Player extends Creature {
 		attackTimer += System.currentTimeMillis() - lastAttackTimer;
 		lastAttackTimer = System.currentTimeMillis();
 		if(attackTimer < attackCooldown)
-			return;
-		if(inventory.isActive())
 			return;
 		Rectangle cb = getCollisionBounds(0, 0);
 		Rectangle ar = new Rectangle();
@@ -122,8 +115,6 @@ public class Player extends Creature {
 		xMove = 0;
 		yMove = 0;
 		
-		if(inventory.isActive())
-			return;
 		
 		if(handler.getKeyManager().up)
 			yMove -= speed;
@@ -142,16 +133,8 @@ public class Player extends Creature {
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(),(int)(x - handler.getGameCamera().getxOffset()),
 				(int)(y - handler.getGameCamera().getyOffset()), width, height, null);
-//		g.setColor(Color.red);
-//		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
-//				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
-//				bounds.width, bounds.height);
 		
-		inventory.render(g);
 		
-	}
-	public void postRender(Graphics g){
-		inventory.render(g);
 	}
 	
 	private BufferedImage getCurrentAnimationFrame() {
@@ -175,13 +158,6 @@ public class Player extends Creature {
 		else return null;
 	}
 
-	public Inventory getInventory() {
-		return inventory;
-	}
-
-	public void setInventory(Inventory inventory) {
-		this.inventory = inventory;
-	}
 	
 	
 }

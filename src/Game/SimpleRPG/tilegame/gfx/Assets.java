@@ -13,7 +13,6 @@ public class Assets {
 
 	public static Font font28;
 	public static BufferedImage dirt, grass, brick, house, water, tree1, tree2, tree3, tree4, tree5, bird, monster, house2, house3, house4, rock1, rock2, rockitem, wooditem, cungitem, buaitem, chuyitem;
-	public static BufferedImage inventoryScreen;
 	public static BufferedImage[] player, player_down, player_up, player_left, player_right, attack_down, attack_up, attack_left, attack_right;
 	public static BufferedImage[] quai1_phai, quai1_trai;
 	public static BufferedImage[] quai2_phai, quai2_trai; 
@@ -179,7 +178,6 @@ public class Assets {
 			buaitem = ImageIO.read(new File("res/textures/bua.png"));
 			chuyitem = ImageIO.read(new File("res/textures/chuy.png"));
 			cungitem = ImageIO.read(new File("res/textures/cung.png"));
-			inventoryScreen = ImageIO.read(new File("res/textures/inventoryScreen.png"));
 			
 			
 		} catch (IOException e) {

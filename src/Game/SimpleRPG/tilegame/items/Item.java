@@ -43,7 +43,7 @@ public class Item {
 	 public void tick() {
 		 if(handler.getWorld().getEntityManager().getPlayer().getCollisionBounds(0f, 0f).intersects(bounds)) {
 			 pickedUp = true;
-			 handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(this);
+//			 handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(this);
 		 };
 	 }
 	 public boolean isPickedUp() {
