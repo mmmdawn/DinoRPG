@@ -93,23 +93,14 @@ public class World {
 		entityManager.addEntity(new Tree3(handler, 64, 1400));
 		entityManager.addEntity(new Tree3(handler, 64, 1350));
 		
-		
-		
-		entityManager.addEntity(new House(handler, 200, 150));
-		entityManager.addEntity(new House2(handler, 1100, 60));
-		
-		
-		entityManager.addEntity(new House2(handler, 300, 680));
 		entityManager.addEntity(new Tree4(handler, 250, 780));
 		entityManager.addEntity(new Tree2(handler, 320, 880));
 		entityManager.addEntity(new Tree4(handler, 410, 950));
 		
-		entityManager.addEntity(new House3(handler, 1200, 800));
 		
 		
 		entityManager.addEntity(new Tree1(handler, 700, 350));
 		entityManager.addEntity(new Tree2(handler, 700, 500));
-		entityManager.addEntity(new House3(handler, 750, 400));
 		entityManager.addEntity(new Tree2(handler, 850, 500));
 		entityManager.addEntity(new Tree1(handler, 850, 350));
 		
@@ -119,7 +110,6 @@ public class World {
 		
 		entityManager.addEntity(new Tree1(handler, 720, 1050));
 		entityManager.addEntity(new Tree2(handler, 720, 1200));
-		entityManager.addEntity(new House4(handler, 750, 1100));
 		entityManager.addEntity(new Tree2(handler, 850, 1200));
 		entityManager.addEntity(new Tree1(handler, 850, 1050));
 		
@@ -145,13 +135,6 @@ public class World {
 		entityManager.addEntity(new Tree1(handler, 800, 1400));
 		entityManager.addEntity(new Tree1(handler, 850, 1430));
 	
-		
-
-		
-		entityManager.addEntity(new House4(handler, 1200, 1450));
-		
-		
-		entityManager.addEntity(new House2(handler, 250, 1400));
 		
 		entityManager.addEntity(new rock1(handler, 460, 80));
 		entityManager.addEntity(new rock1(handler, 410, 10));

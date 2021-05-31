@@ -1,6 +1,5 @@
 package Game.SimpleRPG.tilegame.tiles;
 
-import java.awt.image.BufferedImage;
 
 import Game.SimpleRPG.tilegame.gfx.Assets;
 
