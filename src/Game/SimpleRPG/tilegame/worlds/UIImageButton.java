@@ -14,6 +14,7 @@ public class UIImageButton extends UIObject {
 		this.images = images;
 		this.clicker = clicker;
 	}
+
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
@@ -34,5 +35,4 @@ public class UIImageButton extends UIObject {
 		clicker.onClick();
 		
 	} 
-	
 }

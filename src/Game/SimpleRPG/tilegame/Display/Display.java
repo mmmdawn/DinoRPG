@@ -18,7 +18,7 @@ public class Display {
 		this.height = height;
 		createDisplay();
 	}
-	
+
 	private void createDisplay() {
 		frame = new JFrame(title);
 		frame.setSize(width, height);

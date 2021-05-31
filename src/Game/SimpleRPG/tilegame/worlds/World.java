@@ -129,7 +129,7 @@ public class World {
 		entityManager.addEntity(new rock1(handler, 670, 110));
 		entityManager.addEntity(new rock2(handler, 590, 200));
 		
-		entityManager.addEntity(new monster2(handler, 900, 400));
+		entityManager.addEntity(new Monster2(handler, 900, 400));
 		entityManager.addEntity(new Monster3(handler, 400, 500));
 		entityManager.addEntity(new Monster4(handler, 500, 1000));
 		entityManager.addEntity(new Monster5(handler, 900, 1300));

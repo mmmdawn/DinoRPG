@@ -8,10 +8,10 @@ import Game.SimpleRPG.tilegame.gfx.Animation;
 import Game.SimpleRPG.tilegame.gfx.Assets;
 import Game.SimpleRPG.tilegame.items.Item;
 
-public class monster2 extends StaticEntity{
+public class Monster2 extends StaticEntity{
 	
 	private Animation animaLeft, animaRight;
-	public monster2(Handler handler, float x, float y) {
+	public Monster2(Handler handler, float x, float y) {
 		super(handler, x, y, 70 , 80);
 		bounds.x = 16;
 		bounds.y =(int)(height/2);
