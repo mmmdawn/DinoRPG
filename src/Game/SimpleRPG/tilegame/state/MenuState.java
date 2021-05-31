@@ -12,9 +12,9 @@ import Game.SimpleRPG.tilegame.Game;
 import Game.SimpleRPG.tilegame.Handler;
 import Game.SimpleRPG.tilegame.gfx.Assets;
 import Game.SimpleRPG.tilegame.ui.ClickListener;
-import Game.SimpleRPG.tilegame.worlds.UIImageBackground;
-import Game.SimpleRPG.tilegame.worlds.UIImageButton;
-import Game.SimpleRPG.tilegame.worlds.UIManager;
+import Game.SimpleRPG.tilegame.ui.UIImageBackground;
+import Game.SimpleRPG.tilegame.ui.UIImageButton;
+import Game.SimpleRPG.tilegame.ui.UIManager;
 
 public class MenuState extends State{
 	private BufferedImage background;

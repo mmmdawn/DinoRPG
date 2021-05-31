@@ -1,4 +1,4 @@
-package Game.SimpleRPG.tilegame.worlds;
+package Game.SimpleRPG.tilegame.ui;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;

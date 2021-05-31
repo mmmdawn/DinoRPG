@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import Game.SimpleRPG.tilegame.worlds.UIManager;
+import Game.SimpleRPG.tilegame.ui.UIManager;
 
 public class MouseManager implements MouseListener, MouseMotionListener{
 
