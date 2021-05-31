@@ -157,7 +157,7 @@ public class Assets {
 			player[3] = ImageIO.read(new File("res/dichuyen/idle4.png"));
 
 			
-			dirt = sheet.crop(0, height, width, height);
+			dirt = sheet.crop(64, 64, width, height);
 			grass = ImageIO.read(new File("res/textures/grass.png"));
 			brick = ImageIO.read(new File("res/textures/brick.png"));
 			house = ImageIO.read(new File("res/textures/house.png"));

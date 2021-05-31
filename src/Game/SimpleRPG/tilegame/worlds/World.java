@@ -5,24 +5,11 @@ import java.awt.Graphics;
 import Game.SimpleRPG.tilegame.Handler;
 import Game.SimpleRPG.tilegame.entities.EntityManager;
 import Game.SimpleRPG.tilegame.entities.creatures.Player;
-import Game.SimpleRPG.tilegame.entities.statics.Bird;
-import Game.SimpleRPG.tilegame.entities.statics.House;
-import Game.SimpleRPG.tilegame.entities.statics.House2;
-import Game.SimpleRPG.tilegame.entities.statics.House3;
-import Game.SimpleRPG.tilegame.entities.statics.House4;
-import Game.SimpleRPG.tilegame.entities.statics.Monster3;
-import Game.SimpleRPG.tilegame.entities.statics.Monster4;
-import Game.SimpleRPG.tilegame.entities.statics.Monster5;
-import Game.SimpleRPG.tilegame.entities.statics.Tree1;
-import Game.SimpleRPG.tilegame.entities.statics.Tree2;
-import Game.SimpleRPG.tilegame.entities.statics.Tree3;
-import Game.SimpleRPG.tilegame.entities.statics.Tree4;
-import Game.SimpleRPG.tilegame.entities.statics.monster2;
-import Game.SimpleRPG.tilegame.entities.statics.rock1;
-import Game.SimpleRPG.tilegame.entities.statics.rock2;
+import Game.SimpleRPG.tilegame.entities.statics.*;
 import Game.SimpleRPG.tilegame.items.ItemManager;
 import Game.SimpleRPG.tilegame.tiles.Tile;
 import Game.SimpleRPG.tilegame.utils.Utils;
+
 public class World {
 	private int width, height;
 	private int spawnX, spawnY;
@@ -42,7 +29,6 @@ public class World {
 	public World(Handler handler, String path) {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-//		entityManager = new EntityManager(handler, new Monster(handler, 100, 100));
 		itemManager = new ItemManager(handler);
 		entityManager.addEntity(new Tree1(handler, 64, 64));
 		entityManager.addEntity(new Tree1(handler, 128, 50));
@@ -155,9 +141,10 @@ public class World {
 		
 		entityManager.getPlayer().setX(spawnX);
 		entityManager.getPlayer().setY(spawnY);
-//		
+
 //		entityManager.getMonster().setX(400);
 //		entityManager.getMonster().setY(400);
+
 	}
 	public void tick() {
 		entityManager.tick();

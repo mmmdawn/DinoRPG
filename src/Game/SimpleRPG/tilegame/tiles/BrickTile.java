@@ -7,7 +7,7 @@ public class BrickTile extends Tile {
 		super(Assets.brick, id);
 	}
 	
-	public boolean isSolid() {
+	public boolean isObstacle() {
 		return true;
 	}
 } 

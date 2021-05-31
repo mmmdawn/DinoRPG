@@ -9,6 +9,12 @@ public class DirtTile extends Tile{
 		super(Assets.dirt, id);
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public boolean isObstacle() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 	

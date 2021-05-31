@@ -7,7 +7,7 @@ public class WaterTile extends Tile{
 		super(Assets.water, id);
 	}
 	
-	public boolean isSolid() {
+	public boolean isObstacle() {
 		return true;
 	}
 }
