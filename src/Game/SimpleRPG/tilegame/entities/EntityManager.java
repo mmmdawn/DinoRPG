@@ -32,7 +32,7 @@ public class EntityManager {
 	public void tick() {
 		Iterator<Entity> it = entities.iterator();
 		while(it.hasNext()){
-			Entity e  = it.next();
+			Entity e = it.next();
 			e.tick();
 			if(!e.isActive()) {
 				it.remove();
@@ -40,9 +40,9 @@ public class EntityManager {
 		}
 		entities.sort(renderSorter);
 	}
+
 	public void render(Graphics g) {
 		for(Entity e: entities) {
-			
 			e.render(g);
 		}
 	}

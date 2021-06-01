@@ -9,11 +9,12 @@ import javax.imageio.ImageIO;
 
 public class Assets {
 	
-	private static final int width = 64, height = 64;
+//	private static final int width = 64, height = 64;
 
 	public static Font font28;
-	public static BufferedImage dirt, grass, brick, house, water, tree1, tree2, tree3, tree4, tree5, bird, monster, house2, house3, house4, rock1, rock2, rockitem, wooditem, cungitem, buaitem, chuyitem;
-	public static BufferedImage[] player, player_down, player_up, player_left, player_right, attack_down, attack_up, attack_left, attack_right;
+	public static BufferedImage dirt, grass, brick, water, tree1, tree2, tree3, tree4, tree5, monster, rock1, rock2, rockitem, wooditem, cungitem, buaitem, chuyitem;
+	public static BufferedImage[] playerIdleRight, playerDown, playerUp, playerLeft, playerRight, attack_down, attack_up, attack_left, attack_right;
+	public static BufferedImage[] meteor;
 	public static BufferedImage[] quai1_phai, quai1_trai;
 	public static BufferedImage[] quai2_phai, quai2_trai; 
 	public static BufferedImage[] quai3_phai, quai3_trai;
@@ -24,16 +25,17 @@ public class Assets {
 	public static void init() {
 		try {
 			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
-			SpriteSheet sheet = new SpriteSheet(ImageIO.read(new File("res/textures/entities1.png")));
 			
-			player_down = new BufferedImage[6];
-			player_up = new BufferedImage[6];
-			player_left = new BufferedImage[6];
-			player_right = new BufferedImage[6];
+			playerDown = new BufferedImage[6];
+			playerUp = new BufferedImage[6];
+			playerLeft = new BufferedImage[6];
+			playerRight = new BufferedImage[6];
 			attack_down = new BufferedImage[4];
 			attack_up = new BufferedImage[4];
 			attack_right = new BufferedImage[4];
 			attack_left = new BufferedImage[4];
+			
+			meteor = new BufferedImage[21];
 			
 			quai1_phai = new BufferedImage[1];
 			quai1_trai = new BufferedImage[1];
@@ -50,7 +52,7 @@ public class Assets {
 			quai5_phai = new BufferedImage[5];
 			quai5_trai = new BufferedImage[5];
 			
-			player = new BufferedImage[4];
+			playerIdleRight = new BufferedImage[4];
 			btn_start  = new BufferedImage[2];
 			background = new BufferedImage[1];
 			
@@ -108,33 +110,33 @@ public class Assets {
 
 			
 			
-			player_down[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
-			player_down[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
-			player_down[2] = ImageIO.read(new File("res/dichuyen/phai3.png"));
-			player_down[3] = ImageIO.read(new File("res/dichuyen/phai4.png"));
-			player_down[4] = ImageIO.read(new File("res/dichuyen/phai5.png"));
-			player_down[5] = ImageIO.read(new File("res/dichuyen/phai6.png"));
+			playerDown[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
+			playerDown[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
+			playerDown[2] = ImageIO.read(new File("res/dichuyen/phai3.png"));
+			playerDown[3] = ImageIO.read(new File("res/dichuyen/phai4.png"));
+			playerDown[4] = ImageIO.read(new File("res/dichuyen/phai5.png"));
+			playerDown[5] = ImageIO.read(new File("res/dichuyen/phai6.png"));
 			
-			player_up[0] = ImageIO.read(new File("res/dichuyen/trai1.png"));
-			player_up[1] = ImageIO.read(new File("res/dichuyen/trai2.png"));
-			player_up[2] = ImageIO.read(new File("res/dichuyen/trai3.png"));
-			player_up[3] = ImageIO.read(new File("res/dichuyen/trai4.png"));
-			player_up[4] = ImageIO.read(new File("res/dichuyen/trai5.png"));
-			player_up[5] = ImageIO.read(new File("res/dichuyen/trai6.png"));
+			playerUp[0] = ImageIO.read(new File("res/dichuyen/trai1.png"));
+			playerUp[1] = ImageIO.read(new File("res/dichuyen/trai2.png"));
+			playerUp[2] = ImageIO.read(new File("res/dichuyen/trai3.png"));
+			playerUp[3] = ImageIO.read(new File("res/dichuyen/trai4.png"));
+			playerUp[4] = ImageIO.read(new File("res/dichuyen/trai5.png"));
+			playerUp[5] = ImageIO.read(new File("res/dichuyen/trai6.png"));
 			
-			player_left[0] = ImageIO.read(new File("res/dichuyen/trai1.png"));
-			player_left[1] = ImageIO.read(new File("res/dichuyen/trai2.png"));
-			player_left[2] = ImageIO.read(new File("res/dichuyen/trai3.png"));
-			player_left[3] = ImageIO.read(new File("res/dichuyen/trai4.png"));
-			player_left[4] = ImageIO.read(new File("res/dichuyen/trai5.png"));
-			player_left[5] = ImageIO.read(new File("res/dichuyen/trai6.png"));
+			playerLeft[0] = ImageIO.read(new File("res/dichuyen/trai1.png"));
+			playerLeft[1] = ImageIO.read(new File("res/dichuyen/trai2.png"));
+			playerLeft[2] = ImageIO.read(new File("res/dichuyen/trai3.png"));
+			playerLeft[3] = ImageIO.read(new File("res/dichuyen/trai4.png"));
+			playerLeft[4] = ImageIO.read(new File("res/dichuyen/trai5.png"));
+			playerLeft[5] = ImageIO.read(new File("res/dichuyen/trai6.png"));
 
-			player_right[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
-			player_right[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
-			player_right[2] = ImageIO.read(new File("res/dichuyen/phai3.png"));
-			player_right[3] = ImageIO.read(new File("res/dichuyen/phai4.png"));
-			player_right[4] = ImageIO.read(new File("res/dichuyen/phai5.png"));
-			player_right[5] = ImageIO.read(new File("res/dichuyen/phai6.png"));
+			playerRight[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
+			playerRight[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
+			playerRight[2] = ImageIO.read(new File("res/dichuyen/phai3.png"));
+			playerRight[3] = ImageIO.read(new File("res/dichuyen/phai4.png"));
+			playerRight[4] = ImageIO.read(new File("res/dichuyen/phai5.png"));
+			playerRight[5] = ImageIO.read(new File("res/dichuyen/phai6.png"));
 
 			attack_down[0] = ImageIO.read(new File("res/danhquai/truoc1.png"));
 			attack_down[1] = ImageIO.read(new File("res/danhquai/truoc2.png"));
@@ -151,26 +153,42 @@ public class Assets {
 			attack_left[2] = ImageIO.read(new File("res/danhquai/trai3.png"));
 			attack_left[3] = ImageIO.read(new File("res/danhquai/trai4.png"));
 			
-			player[0] = ImageIO.read(new File("res/dichuyen/idle1.png"));
-			player[1] = ImageIO.read(new File("res/dichuyen/idle2.png"));
-			player[2] = ImageIO.read(new File("res/dichuyen/idle3.png"));
-			player[3] = ImageIO.read(new File("res/dichuyen/idle4.png"));
+			playerIdleRight[0] = ImageIO.read(new File("res/dichuyen/idle1.png"));
+			playerIdleRight[1] = ImageIO.read(new File("res/dichuyen/idle2.png"));
+			playerIdleRight[2] = ImageIO.read(new File("res/dichuyen/idle3.png"));
+			playerIdleRight[3] = ImageIO.read(new File("res/dichuyen/idle4.png"));
 
+			meteor[0] = ImageIO.read(new File("res/meteor/meteor01.png"));
+			meteor[1] = ImageIO.read(new File("res/meteor/meteor02.png"));
+			meteor[2] = ImageIO.read(new File("res/meteor/meteor03.png"));
+			meteor[3] = ImageIO.read(new File("res/meteor/meteor04.png"));
+			meteor[4] = ImageIO.read(new File("res/meteor/meteor05.png"));
+			meteor[5] = ImageIO.read(new File("res/meteor/meteor06.png"));
+			meteor[6] = ImageIO.read(new File("res/meteor/meteor07.png"));
+			meteor[7] = ImageIO.read(new File("res/meteor/meteor08.png"));
+			meteor[8] = ImageIO.read(new File("res/meteor/meteor09.png"));
+			meteor[9] = ImageIO.read(new File("res/meteor/meteor10.png"));
+			meteor[10] = ImageIO.read(new File("res/meteor/meteor11.png"));
+			meteor[11] = ImageIO.read(new File("res/meteor/meteor12.png"));
+			meteor[12] = ImageIO.read(new File("res/meteor/meteor13.png"));
+			meteor[13] = ImageIO.read(new File("res/meteor/meteor14.png"));
+			meteor[14] = ImageIO.read(new File("res/meteor/meteor15.png"));
+			meteor[15] = ImageIO.read(new File("res/meteor/meteor16.png"));
+			meteor[16] = ImageIO.read(new File("res/meteor/meteor17.png"));
+			meteor[17] = ImageIO.read(new File("res/meteor/meteor18.png"));
+			meteor[18] = ImageIO.read(new File("res/meteor/meteor19.png"));
+			meteor[19] = ImageIO.read(new File("res/meteor/meteor20.png"));
+			meteor[20] = ImageIO.read(new File("res/meteor/meteor21.png"));
 			
-			dirt = sheet.crop(64, 64, width, height);
+			dirt = ImageIO.read(new File("res/textures/dirt.png"));
 			grass = ImageIO.read(new File("res/textures/grass.png"));
 			brick = ImageIO.read(new File("res/textures/brick.png"));
-			house = ImageIO.read(new File("res/textures/house.png"));
-			house2 = ImageIO.read(new File("res/textures/house2.png"));
-			house3 = ImageIO.read(new File("res/textures/house3.png"));
-			house4 = ImageIO.read(new File("res/textures/house4.png"));
 			water = ImageIO.read(new File("res/textures/water.png"));
 			tree1 = ImageIO.read(new File("res/textures/cay.png"));
 			tree2 = ImageIO.read(new File("res/textures/cay2.png"));
 			tree3 = ImageIO.read(new File("res/textures/cay3.png"));
 			tree4 = ImageIO.read(new File("res/textures/cay4.png"));
 			tree5 = ImageIO.read(new File("res/textures/cay5.png"));
-			bird = ImageIO.read(new File("res/textures/bird.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
 			rockitem = ImageIO.read(new File("res/textures/rockitem.png"));

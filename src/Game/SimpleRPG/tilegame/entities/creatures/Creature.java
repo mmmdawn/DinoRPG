@@ -1,6 +1,5 @@
 package Game.SimpleRPG.tilegame.entities.creatures;
 
-import Game.SimpleRPG.tilegame.Game;
 import Game.SimpleRPG.tilegame.Handler;
 import Game.SimpleRPG.tilegame.entities.Entity;
 import Game.SimpleRPG.tilegame.tiles.Tile;
@@ -9,8 +8,8 @@ public abstract class Creature extends Entity{
 	
 	
 	public static final float DEFAULT_SPEED = 3.0f;
-	public static final int DEFAULT_CREATURE_WIDTH = 70,
-			DEFAULT_CREATURE_HEIGHT = 70;
+	public static final int DEFAULT_CREATURE_WIDTH = 64,
+			DEFAULT_CREATURE_HEIGHT = 64;
 	
 	
 	protected float speed;

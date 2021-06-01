@@ -47,8 +47,6 @@ public class World {
 		entityManager.addEntity(new Tree1(handler, 64, 1030));
 		entityManager.addEntity(new Tree1(handler, 64, 1090));
 
-	
-		
 		entityManager.addEntity(new Tree2(handler, 710, 64));
 		entityManager.addEntity(new Tree3(handler, 710, 128));
 		entityManager.addEntity(new Tree4(handler, 774, 64));
@@ -134,9 +132,6 @@ public class World {
 		entityManager.addEntity(new Monster4(handler, 500, 1000));
 		entityManager.addEntity(new Monster5(handler, 900, 1300));
 
-		
-		
-		
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);

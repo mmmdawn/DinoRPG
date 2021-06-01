@@ -1,5 +1,6 @@
 package Game.SimpleRPG.tilegame.entities.creatures;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -22,17 +23,17 @@ public class Player extends Creature {
 	//inventory
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
-		bounds.x = 17;
-		bounds.y = 32;
-		bounds.width = 14;
+		bounds.x = 25;
+		bounds.y = 37;
+		bounds.width = 20;
 		bounds.height = 15;
 		
 		//animation
-		animationDown = new Animation(100, Assets.player_down);
-		animationUp = new Animation(100, Assets.player_up);
-		animationLeft = new Animation(100, Assets.player_left);
-		animationRight = new Animation(100, Assets.player_right);
-		animationIdle = new Animation(100, Assets.player);
+		animationDown = new Animation(100, Assets.playerDown);
+		animationUp = new Animation(100, Assets.playerUp);
+		animationLeft = new Animation(100, Assets.playerLeft);
+		animationRight = new Animation(100, Assets.playerRight);
+		animationIdle = new Animation(100, Assets.playerIdleRight);
 		attack_left = new Animation(500, Assets.attack_left);
 		attack_right = new Animation(500, Assets.attack_right);
 		attack_down = new Animation(500, Assets.attack_down);
@@ -134,7 +135,11 @@ public class Player extends Creature {
 		g.drawImage(getCurrentAnimationFrame(),(int)(x - handler.getGameCamera().getxOffset()),
 				(int)(y - handler.getGameCamera().getyOffset()), width, height, null);
 		
-		
+		// dev mode :D 
+		g.setColor(Color.red);
+		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
+				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
+				bounds.width, bounds.height);
 	}
 	
 	private BufferedImage getCurrentAnimationFrame() {

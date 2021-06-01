@@ -18,7 +18,6 @@ public class Tree2 extends StaticEntity{
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -33,7 +32,5 @@ public class Tree2 extends StaticEntity{
 	@Override
 	public void die() {
 		handler.getWorld().getItemManager().addItem(Item.woodItem.createNew((int)x,(int) y));
-
-		
 	}
 }

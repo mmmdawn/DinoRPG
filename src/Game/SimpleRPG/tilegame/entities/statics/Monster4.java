@@ -68,7 +68,6 @@ public class Monster4 extends StaticEntity{
 	@Override
 	public void die() {
 		handler.getWorld().getItemManager().addItem(Item.buaItem.createNew((int)x,(int) y));
-		
 	}
 	
 }
