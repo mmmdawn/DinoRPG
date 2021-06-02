@@ -12,14 +12,9 @@ public class Assets {
 //	private static final int width = 64, height = 64;
 
 	public static Font font28;
-	public static BufferedImage dirt, grass, brick, water, tree1, tree2, tree3, tree4, tree5, monster, rock1, rock2, rockitem, wooditem, cungitem, buaitem, chuyitem;
+	public static BufferedImage dirt, grass, brick, water, tree1, tree2, tree3, tree4, tree5, rock1, rock2, rockitem, wooditem, cungitem, buaitem, chuyitem;
 	public static BufferedImage[] playerIdleRight, playerDown, playerUp, playerLeft, playerRight, attack_down, attack_up, attack_left, attack_right;
 	public static BufferedImage[] meteor;
-	public static BufferedImage[] quai1_phai, quai1_trai;
-	public static BufferedImage[] quai2_phai, quai2_trai; 
-	public static BufferedImage[] quai3_phai, quai3_trai;
-	public static BufferedImage[] quai4_phai, quai4_trai;
-	public static BufferedImage[] quai5_phai, quai5_trai;
 	public static BufferedImage[] btn_start;
 	public static BufferedImage[] background;
 
@@ -38,21 +33,6 @@ public class Assets {
 			
 			meteor = new BufferedImage[21];
 			
-			quai1_phai = new BufferedImage[1];
-			quai1_trai = new BufferedImage[1];
-			
-			quai2_phai = new BufferedImage[4];
-			quai2_trai = new BufferedImage[4];
-
-			quai3_phai = new BufferedImage[5];
-			quai3_trai = new BufferedImage[5];
-
-			quai4_phai = new BufferedImage[5];
-			quai4_trai = new BufferedImage[5];
-			
-			quai5_phai = new BufferedImage[5];
-			quai5_trai = new BufferedImage[5];
-			
 			playerIdleRight = new BufferedImage[4];
 			btn_start  = new BufferedImage[2];
 			background = new BufferedImage[1];
@@ -60,56 +40,6 @@ public class Assets {
 			btn_start[0] = ImageIO.read(new File("res/textures/start.png"));
 			btn_start[1] = ImageIO.read(new File("res/textures/start2.png"));
 			background[0] = ImageIO.read(new File("res/textures/background.png"));
-			
-			quai1_phai[0] = ImageIO.read(new File("res/monster/doge.png"));
-			quai1_trai[0] = ImageIO.read(new File("res/monster/doge.png"));
-			
-			quai2_phai[0] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_phai[1] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_phai[2] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_phai[3] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_trai[0] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_trai[1] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_trai[2] = ImageIO.read(new File("res/monster/doge.png"));
-			quai2_trai[3] = ImageIO.read(new File("res/monster/doge.png"));
-
-			
-			
-			quai3_phai[0] = ImageIO.read(new File("res/monster/quai3/phai1.png"));
-			quai3_phai[1] = ImageIO.read(new File("res/monster/quai3/phai2.png"));
-			quai3_phai[2] = ImageIO.read(new File("res/monster/quai3/phai3.png"));
-			quai3_phai[3] = ImageIO.read(new File("res/monster/quai3/phai4.png"));
-			quai3_phai[4] = ImageIO.read(new File("res/monster/quai3/phai5.png"));
-			quai3_trai[0] = ImageIO.read(new File("res/monster/quai3/trai1.png"));
-			quai3_trai[1] = ImageIO.read(new File("res/monster/quai3/trai2.png"));
-			quai3_trai[2] = ImageIO.read(new File("res/monster/quai3/trai3.png"));
-			quai3_trai[3] = ImageIO.read(new File("res/monster/quai3/trai4.png"));
-			quai3_trai[4] = ImageIO.read(new File("res/monster/quai3/trai5.png"));
-			
-			quai4_phai[0] = ImageIO.read(new File("res/monster/quai4/phai1.png"));
-			quai4_phai[1] = ImageIO.read(new File("res/monster/quai4/phai2.png"));
-			quai4_phai[2] = ImageIO.read(new File("res/monster/quai4/phai3.png"));
-			quai4_phai[3] = ImageIO.read(new File("res/monster/quai4/phai4.png"));
-			quai4_phai[4] = ImageIO.read(new File("res/monster/quai4/phai5.png"));
-			quai4_trai[0] = ImageIO.read(new File("res/monster/quai4/trai1.png"));
-			quai4_trai[1] = ImageIO.read(new File("res/monster/quai4/trai2.png"));
-			quai4_trai[2] = ImageIO.read(new File("res/monster/quai4/trai3.png"));
-			quai4_trai[3] = ImageIO.read(new File("res/monster/quai4/trai4.png"));
-			quai4_trai[4] = ImageIO.read(new File("res/monster/quai4/trai5.png"));
-			
-			quai5_phai[0] = ImageIO.read(new File("res/monster/quai5/phai1.png"));
-			quai5_phai[1] = ImageIO.read(new File("res/monster/quai5/phai2.png"));
-			quai5_phai[2] = ImageIO.read(new File("res/monster/quai5/phai3.png"));
-			quai5_phai[3] = ImageIO.read(new File("res/monster/quai5/phai4.png"));
-			quai5_phai[4] = ImageIO.read(new File("res/monster/quai5/phai5.png"));
-			quai5_trai[0] = ImageIO.read(new File("res/monster/quai5/trai1.png"));
-			quai5_trai[1] = ImageIO.read(new File("res/monster/quai5/trai2.png"));
-			quai5_trai[2] = ImageIO.read(new File("res/monster/quai5/trai3.png"));
-			quai5_trai[3] = ImageIO.read(new File("res/monster/quai5/trai4.png"));
-			quai5_trai[4] = ImageIO.read(new File("res/monster/quai5/trai5.png"));
-
-
-			
 			
 			playerDown[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
 			playerDown[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));

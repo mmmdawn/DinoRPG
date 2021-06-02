@@ -118,6 +118,7 @@ public class World {
 		entityManager.addEntity(new Tree1(handler, 700, 1400));
 		entityManager.addEntity(new Tree1(handler, 800, 1400));
 		entityManager.addEntity(new Tree1(handler, 850, 1430));
+
 		entityManager.addEntity(new Meteor(handler, 900, 900));
 		
 		entityManager.addEntity(new rock1(handler, 460, 80));
@@ -127,10 +128,6 @@ public class World {
 		entityManager.addEntity(new rock1(handler, 670, 110));
 		entityManager.addEntity(new rock2(handler, 590, 200));
 		
-		entityManager.addEntity(new Monster2(handler, 900, 400));
-		entityManager.addEntity(new Monster3(handler, 400, 500));
-		entityManager.addEntity(new Monster4(handler, 500, 1000));
-		entityManager.addEntity(new Monster5(handler, 900, 1300));
 
 		loadWorld(path);
 		
