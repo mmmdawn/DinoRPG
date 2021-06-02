@@ -5,31 +5,31 @@ import java.awt.Graphics;
 import game.entities.EntityManager;
 import game.entities.creatures.Player;
 import game.entities.meteor.Meteor;
+import game.entities.meteor.MeteorGenerator;
 import game.entities.statics.*;
 import game.items.ItemManager;
 import game.tiles.Tile;
 import game.utils.Utils;
 
 public class World {
+	private EntityManager entityManager;
+	private ItemManager itemManager;
+	private MeteorGenerator meteorGenerator;
+	private Handler handler;
 	private int width, height;
 	private int spawnX, spawnY;
 	private int[][] tiles;
+
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
 
-	private Handler handler;
-	
-	//Entities
-	private EntityManager entityManager;
-	
-	//item
-	private ItemManager itemManager;
-	
 	public World(Handler handler, String path) {
 		this.handler = handler;
+		meteorGenerator = new MeteorGenerator(handler);
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
 		itemManager = new ItemManager(handler);
+		
 		entityManager.addEntity(new Tree1(handler, 64, 64));
 		entityManager.addEntity(new Tree1(handler, 128, 50));
 		entityManager.addEntity(new Tree1(handler, 192, 64));
@@ -134,9 +134,6 @@ public class World {
 		entityManager.getPlayer().setX(spawnX);
 		entityManager.getPlayer().setY(spawnY);
 
-//		entityManager.getMonster().setX(400);
-//		entityManager.getMonster().setY(400);
-
 	}
 	public void tick() {
 		entityManager.tick();
@@ -154,26 +151,11 @@ public class World {
 						(int)(y *Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
 			}
 		}
-		//items
 		itemManager.render(g);
-		// entities
 		entityManager.render(g);
 	}
 	  
-	public Handler getHandler() {
-		return handler;
-	}
-	public void setHandler(Handler handler) {
-		this.handler = handler;
-	}
-	public ItemManager getItemManager() {
-		return itemManager;
-	}
-	public void setItemManager(ItemManager itemManager) {
-		this.itemManager = itemManager;
-	}
 	public Tile getTile(int x, int y) {
-		
 		if(x < 0 || y < 0 || x >= width || y >= height)
 			return Tile.grassTile;
 		Tile t = Tile.tiles[tiles[x][y]];
@@ -197,6 +179,15 @@ public class World {
 			}
 		}
 	}
+	
+	public MeteorGenerator getMeteorGenerator() {
+		return meteorGenerator;
+	}
+
+	public ItemManager getItemManager() {
+		return itemManager;
+	}
+	
 	public int getWidth() {
 		return width;
 	}

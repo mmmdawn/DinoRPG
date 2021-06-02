@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 public class Utils {
+	private static Random random = new Random();
+	
 	public static String loadFileAsString(String path)  {
 		StringBuilder builder = new StringBuilder();
 		try {
@@ -29,5 +32,13 @@ public class Utils {
 			return 0;
 		}
 
+	}
+	
+	public static int getRandomInteger(int min, int max) {
+		return random.nextInt(max - min) + min;
+	}
+	
+	public static float getRandomFloat(int min, int max) {
+		return (float) (Math.random() * (max - min) + min);
 	}
 }

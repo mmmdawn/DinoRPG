@@ -10,7 +10,6 @@ import game.gfx.Assets;
 public class Item {
 	
 	//Handler
-	
 	public static Item[] items = new Item[256];
 	public static Item woodItem = new Item(Assets.wooditem, "wood", 0);
 	public static Item rockItem = new Item(Assets.rockitem,"rock", 1);
@@ -18,7 +17,6 @@ public class Item {
 	public static Item cungItem = new Item(Assets.cungitem,"Super crossbow", 3);
 	public static Item chuyItem = new Item(Assets.chuyitem,"Super mace", 4);
 	
-//	public static Item player_die = new Item(Assets.player_die,"die", 2);
 	//class
 	 public static final int ITEMWIDTH= 32, ITEMHEIGHT= 32;
 	 protected Handler handler;
@@ -94,27 +92,6 @@ public class Item {
 	}
 	public void setTexture(BufferedImage texture) {
 		this.texture = texture;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getX() {
-		return x;
-	}
-	public void setX(int x) {
-		this.x = x;
-	}
-	public int getY() {
-		return y;
-	}
-	public void setY(int y) {
-		this.y = y;
-	}
-	public int getCount() {
-		return count;
 	}
 	public void setCount(int count) {
 		this.count = count;

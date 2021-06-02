@@ -30,6 +30,7 @@ public class EntityManager {
 	
 	
 	public void tick() {
+		this.addEntity(handler.getWorld().getMeteorGenerator().getRandomMeteor(handler));
 		Iterator<Entity> it = entities.iterator();
 		while(it.hasNext()){
 			Entity e = it.next();
@@ -48,30 +49,22 @@ public class EntityManager {
 	}
 	
 	public void addEntity(Entity e) {
-		entities.add(e);
+		if (e == null) {
+			return;
+		} else {
+			entities.add(e);
+		}
 	}
 
 	public Handler getHandler() {
 		return handler;
 	}
 
-	public void setHandler(Handler handler) {
-		this.handler = handler;
-	}
-
 	public Player getPlayer() {
 		return player;
 	}
 
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
-	
 	public ArrayList<Entity> getEntities() {
 		return entities;
-	}
-
-	public void setEntities(ArrayList<Entity> entities) {
-		this.entities = entities;
 	}
 }
