@@ -22,6 +22,7 @@ public class Assets {
 	public static BufferedImage[] quai5_phai, quai5_trai;
 	public static BufferedImage[] btn_start;
 	public static BufferedImage[] background;
+
 	public static void init() {
 		try {
 			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);

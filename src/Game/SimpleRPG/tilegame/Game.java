@@ -2,17 +2,10 @@ package Game.SimpleRPG.tilegame;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import Game.SimpleRPG.tilegame.Display.Display;
 import Game.SimpleRPG.tilegame.gfx.Assets;
 import Game.SimpleRPG.tilegame.gfx.GameCamera;
-import Game.SimpleRPG.tilegame.gfx.ImageLoader;
-import Game.SimpleRPG.tilegame.gfx.SpriteSheet;
 import Game.SimpleRPG.tilegame.input.KeyManager;
 import Game.SimpleRPG.tilegame.input.MouseManager;
 import Game.SimpleRPG.tilegame.state.GameState;
@@ -65,7 +58,6 @@ public class Game implements Runnable{
 		
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
-		
 		
 		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
@@ -122,7 +114,7 @@ public class Game implements Runnable{
 				delta--;
 			}
 			if(timer >= 1000000000 ) {
-				System.out.println("Ticks and Frames:" + ticks );
+//				System.out.println("Ticks and Frames:" + ticks );
 				ticks = 0;
 				timer = 0;
 			}
@@ -170,6 +162,4 @@ public class Game implements Runnable{
 	public int getHeight() {
 		return height;
 	}
-	
-	
 }

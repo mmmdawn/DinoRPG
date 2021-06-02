@@ -118,7 +118,7 @@ public class World {
 		entityManager.addEntity(new Tree1(handler, 700, 1400));
 		entityManager.addEntity(new Tree1(handler, 800, 1400));
 		entityManager.addEntity(new Tree1(handler, 850, 1430));
-	
+		entityManager.addEntity(new Meteor(handler, 900, 900));
 		
 		entityManager.addEntity(new rock1(handler, 460, 80));
 		entityManager.addEntity(new rock1(handler, 410, 10));

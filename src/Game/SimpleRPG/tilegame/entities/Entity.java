@@ -46,7 +46,6 @@ public abstract class Entity {
 		this.height = height;
 		this.handler = handler;
 		health = DEFAULT_HEALTH;
-		
 		bounds = new Rectangle(0, 0 , width, height);
 	}
 
@@ -104,5 +103,9 @@ public abstract class Entity {
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+	
+	public void setBounds(Rectangle bounds) {
+		this.bounds = bounds;
 	}
 }
