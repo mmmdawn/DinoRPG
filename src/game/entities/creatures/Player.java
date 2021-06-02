@@ -97,7 +97,6 @@ public class Player extends Creature {
 		}else {
 			attack = 0;
 			return;
-			
 		}
 		
 		attackTimer = 0;
@@ -111,6 +110,7 @@ public class Player extends Creature {
 			}
 		}
 	}
+
 	private void getInput() {
 		xMove = 0;
 		yMove = 0;

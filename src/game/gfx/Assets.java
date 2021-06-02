@@ -22,20 +22,20 @@ public class Assets {
 		try {
 			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
 			
+			btn_start  = new BufferedImage[2];
+			background = new BufferedImage[1];
+
 			playerDown = new BufferedImage[6];
 			playerUp = new BufferedImage[6];
 			playerLeft = new BufferedImage[6];
 			playerRight = new BufferedImage[6];
+			playerIdleRight = new BufferedImage[4];
+
 			attack_down = new BufferedImage[4];
 			attack_up = new BufferedImage[4];
 			attack_right = new BufferedImage[4];
 			attack_left = new BufferedImage[4];
-			
 			meteor = new BufferedImage[21];
-			
-			playerIdleRight = new BufferedImage[4];
-			btn_start  = new BufferedImage[2];
-			background = new BufferedImage[1];
 			
 			btn_start[0] = ImageIO.read(new File("res/textures/start.png"));
 			btn_start[1] = ImageIO.read(new File("res/textures/start2.png"));
