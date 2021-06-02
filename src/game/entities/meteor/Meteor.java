@@ -36,7 +36,7 @@ public class Meteor extends Entity{
 	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
-		g.drawImage(getCurrentFrame(), (int)(x - handler.getGameCamera().getxOffset()), (int)(x - handler.getGameCamera().getyOffset()), width, height, null);
+		g.drawImage(getCurrentFrame(), (int)(x - handler.getGameCamera().getxOffset()), (int)(y - handler.getGameCamera().getyOffset()), width, height, null);
 
 //		g.setColor(Color.red);
 //		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),

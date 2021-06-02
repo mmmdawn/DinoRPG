@@ -97,7 +97,7 @@ public class World {
 		entityManager.addEntity(new Tree2(handler, 850, 1200));
 		entityManager.addEntity(new Tree1(handler, 850, 1050));
 		
-		entityManager.addEntity(new Tree4(handler, 1400, 1500));
+		entityManager.addEntity(new Tree4(handler, 1800, 1500));
 		entityManager.addEntity(new Tree4(handler, 1400, 1600));
 		entityManager.addEntity(new Tree4(handler, 1400, 1450));
 		entityManager.addEntity(new Tree4(handler, 1400, 1400));
@@ -119,8 +119,8 @@ public class World {
 		entityManager.addEntity(new Tree1(handler, 800, 1400));
 		entityManager.addEntity(new Tree1(handler, 850, 1430));
 
-		entityManager.addEntity(new Meteor(handler, 900, 900));
-		
+		entityManager.addEntity(new Meteor(handler, 30, 0));
+
 		entityManager.addEntity(new rock1(handler, 460, 80));
 		entityManager.addEntity(new rock1(handler, 410, 10));
 		entityManager.addEntity(new rock1(handler, 810, 80));

@@ -34,11 +34,11 @@ public class Utils {
 
 	}
 	
-	public static int getRandomInteger(int min, int max) {
-		return random.nextInt(max - min) + min;
-	}
+//	public static int getRandomInteger(float min, float max) {
+//		return random.nextInt(max - min) + min;
+//	}
 	
-	public static float getRandomFloat(int min, int max) {
+	public static float getRandomFloat(float min, float max) {
 		return (float) (Math.random() * (max - min) + min);
 	}
 }
