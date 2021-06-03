@@ -2,8 +2,6 @@ package game.entities;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
-import game.Game;
 import game.Handler;
 import game.entities.meteor.Meteor;
 
@@ -16,7 +14,6 @@ public abstract class Entity {
 	protected boolean active = true;
 	protected float x, y;
 	protected int width, height;
-	protected int j1=0;
 	protected int health;
 	
 	public abstract void tick();
@@ -60,7 +57,7 @@ public abstract class Entity {
 	
 	public boolean checkEntityCollisions(float xOffset, float yOffset) {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
-			if(e.equals(this) || e instanceof Meteor)
+			if(e.equals(this)|| e instanceof Meteor)
 				continue;
 			if(e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
 				return true;
