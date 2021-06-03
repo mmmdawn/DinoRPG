@@ -8,9 +8,11 @@ import game.gfx.Assets;
 
 public class Coin extends Item {
 	private static int weight = 1;
+	private static final int COIN_WIDTH = 32;
+	private static final int COIN_HEIGHT = 32;
 
 	public Coin(Handler handler, float x, float y) {
-		super(new Animation(50, Assets.coin), handler, x, y);
+		super(new Animation(50, Assets.coin), handler, x, y, COIN_WIDTH, COIN_HEIGHT);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -20,10 +22,8 @@ public class Coin extends Item {
 		handler.getGame().setScore(handler.getGame().getScore() + 10 * weight);
 	}
 
-	@Override
-	public void render(Graphics g) {
-		// TODO Auto-generated method stub
-
+	public void increaseWeight() {
+		weight += 1;
 	}
 
 }

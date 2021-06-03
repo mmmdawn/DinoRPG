@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import game.Handler;
 import game.entities.creatures.Player;
@@ -13,6 +15,7 @@ public class EntityManager {
 	private Handler handler;
 	private Player player;
 	private ArrayList<Entity> entities;
+	private Queue<Entity> newEntityQueue;
 	private Comparator<Entity> renderSorter = new Comparator<Entity>() {
 		public int compare(Entity a, Entity b) {
 			if(a.getY() + a.getHeight() < b.getY() +b.getHeight())
@@ -25,19 +28,26 @@ public class EntityManager {
 		this.handler = handler;
 		this.player = player;
 		entities = new ArrayList<Entity>();
+		newEntityQueue = new LinkedList<Entity>();
 		addEntity(player);
 	}
 	
 	
 	public void tick() {
+		Entity e;
+
 		this.addEntity(handler.getWorld().getMeteorGenerator().getRandomMeteor(handler));
 		Iterator<Entity> it = entities.iterator();
 		while(it.hasNext()){
-			Entity e = it.next();
+			e = it.next();
 			e.tick();
 			if(!e.isActive()) {
 				it.remove();
 			}
+		}
+		
+		while ((e = newEntityQueue.poll()) != null) {
+			addEntity(e);
 		}
 		entities.sort(renderSorter);
 	}
@@ -56,15 +66,15 @@ public class EntityManager {
 		}
 	}
 
-	public Handler getHandler() {
-		return handler;
-	}
-
 	public Player getPlayer() {
 		return player;
 	}
 
 	public ArrayList<Entity> getEntities() {
 		return entities;
+	}
+	
+	public Queue<Entity> getNewEntityQueue() {
+		return this.newEntityQueue;
 	}
 }

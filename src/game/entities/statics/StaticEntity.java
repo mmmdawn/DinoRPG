@@ -17,10 +17,7 @@ public abstract class StaticEntity extends Entity {
 
 	@Override
 	public void tick() {
-		if (checkMeteorCollision()) {
-			System.out.println("Deleted");
-//			this.hurt(1);
-		}
+		checkMeteorCollision();
 	}
 
 	@Override
@@ -32,14 +29,15 @@ public abstract class StaticEntity extends Entity {
 	@Override
 	public void die() {
 		// TODO Auto-generated method stub
-		handler.getWorld().getEntityManager().addEntity(new Coin(handler, this.x, this.y));
+//		handler.getWorld().getEntityManager().addEntity(new Coin(handler, this.x, this.y));
+		handler.getWorld().getEntityManager().getNewEntityQueue().add(new Coin(handler, this.x, this.y));
 	}
 	
-	public boolean checkMeteorCollision() {
+	public void checkMeteorCollision() {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities())
 			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage()) {
-				return true;
+				this.hurt(1);
+				break;
 		}
-		return false;
 	}
 }

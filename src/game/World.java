@@ -3,6 +3,7 @@ package game;
 import java.awt.Graphics;
 import game.entities.EntityManager;
 import game.entities.creatures.Player;
+import game.entities.items.Coin;
 import game.entities.meteor.Meteor;
 import game.entities.meteor.MeteorGenerator;
 import game.entities.statics.*;
@@ -44,7 +45,7 @@ public class World {
 		entityManager.addEntity(new Tree1(handler, 64, 1090));
 
 		entityManager.addEntity(new Tree2(handler, 710, 64));
-		entityManager.addEntity(new Tree3(handler, 710, 128));
+		entityManager.addEntity(new Coin(handler, 710, 128));
 		entityManager.addEntity(new Tree4(handler, 774, 64));
 		
 		entityManager.addEntity(new Tree2(handler, 1400, 64));
@@ -117,12 +118,12 @@ public class World {
 
 		entityManager.addEntity(new Meteor(handler, 30, 0));
 
-		entityManager.addEntity(new rock1(handler, 460, 80));
-		entityManager.addEntity(new rock1(handler, 410, 10));
-		entityManager.addEntity(new rock1(handler, 810, 80));
-		entityManager.addEntity(new rock1(handler, 870, 10));
-		entityManager.addEntity(new rock1(handler, 670, 110));
-		entityManager.addEntity(new rock2(handler, 590, 200));
+		entityManager.addEntity(new Rock1(handler, 460, 80));
+		entityManager.addEntity(new Rock1(handler, 410, 10));
+		entityManager.addEntity(new Rock1(handler, 810, 80));
+		entityManager.addEntity(new Rock1(handler, 870, 10));
+		entityManager.addEntity(new Rock1(handler, 670, 110));
+		entityManager.addEntity(new Rock2(handler, 590, 200));
 		
 
 		loadWorld(path);

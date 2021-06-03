@@ -23,7 +23,8 @@ public class MeteorAnimation extends Animation {
 			timer = 0;
 			if (index == 10)
 				dealDamage = true;
-
+			if (index == 18)
+				dealDamage = false;
 			if(index == frames.length)
 				end = true;
 		}

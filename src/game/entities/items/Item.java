@@ -7,14 +7,13 @@ import game.entities.Entity;
 import game.gfx.Animation;
 
 public abstract class Item extends Entity{
-	protected static final int ITEM_SIZE = 64;
 	protected Animation animation;
 	
 	protected abstract void makeEffect();
 	
-	public Item(Animation animation, Handler handler, float x, float y) {
+	public Item(Animation animation, Handler handler, float x, float y, int width, int height) {
 		// TODO Auto-generated constructor stub
-		super(handler, x, y, ITEM_SIZE, ITEM_SIZE);
+		super(handler, x, y, width, height);
 		this.animation = animation;
 	}
 

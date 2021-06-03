@@ -45,17 +45,17 @@ public class Player extends Creature {
 		move();
 
 		handler.getGameCamera().setCameraPosition(this);
-		if (checkMeteorCollision()) {
-			this.hurt(1);
-		}
+		
+		checkMeteorCollision();
 	}
 	
-	public boolean checkMeteorCollision() {
+	public void checkMeteorCollision() {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
-			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage())
-				return true;
+			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage()) {
+				this.hurt(1);
+				break;
+			}
 		}
-		return false;
 	}
 
 	private void getInput() {

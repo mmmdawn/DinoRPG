@@ -7,10 +7,10 @@ import game.Handler;
 import game.gfx.Assets;
 import game.tiles.Tile;
 
-public class rock2 extends StaticEntity {
+public class Rock1 extends StaticEntity {
 
-	public rock2(Handler handler, float x, float y) {
-		super(Assets.rock2, handler, x, y, 100, 100);
+	public Rock1(Handler handler, float x, float y) {
+		super(Assets.rock1, handler, x, y, 200, 200 );
 		bounds.x =3;
 		bounds.y =(int)(height/2f);
 		bounds.width= width -6;

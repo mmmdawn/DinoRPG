@@ -3,6 +3,7 @@ package game.entities;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import game.Handler;
+import game.entities.items.Item;
 import game.entities.meteor.Meteor;
 
 public abstract class Entity {
@@ -20,21 +21,8 @@ public abstract class Entity {
 	public abstract void render(Graphics g);
 	public abstract void die();
 	
-
-	public int getHealth() {
-		return health;
-	}
-
-	public void setHealth(int health) {
-		this.health = health;
-	}
-
 	public boolean isActive() {
 		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
 	}
 
 	public Entity(Handler handler, float x, float y, int width, int height) {
@@ -57,7 +45,7 @@ public abstract class Entity {
 	
 	public boolean checkEntityCollisions(float xOffset, float yOffset) {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
-			if(e.equals(this)|| e instanceof Meteor)
+			if(e.equals(this)|| e instanceof Meteor || e instanceof Item)
 				continue;
 			if(e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
 				return true;
