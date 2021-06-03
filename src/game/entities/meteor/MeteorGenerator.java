@@ -33,6 +33,6 @@ public class MeteorGenerator {
 	public void increaseDifficulty() {
 		if(spawn_delay == 0)
 			return;
-		spawn_delay -= 20;
+		spawn_delay -= 50;
 	}
 }

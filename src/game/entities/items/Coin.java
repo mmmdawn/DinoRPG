@@ -7,7 +7,6 @@ import game.gfx.Animation;
 import game.gfx.Assets;
 
 public class Coin extends Item {
-	private static int weight = 1;
 	private static final int COIN_WIDTH = 32;
 	private static final int COIN_HEIGHT = 32;
 
@@ -19,11 +18,6 @@ public class Coin extends Item {
 	@Override
 	protected void makeEffect() {
 		// TODO Auto-generated method stub
-		handler.getGame().setScore(handler.getGame().getScore() + 10 * weight);
+		handler.getGame().setScore(handler.getGame().getScore() + 10);
 	}
-
-	public void increaseWeight() {
-		weight += 1;
-	}
-
 }
