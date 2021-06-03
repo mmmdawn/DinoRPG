@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import game.Handler;
 import game.entities.Entity;
 import game.entities.items.Coin;
+import game.entities.meteor.Meteor;
 
 public abstract class StaticEntity extends Entity {
 	protected BufferedImage img;
@@ -15,7 +16,12 @@ public abstract class StaticEntity extends Entity {
 	}
 
 	@Override
-	public void tick() {}
+	public void tick() {
+		if (checkMeteorCollision()) {
+			System.out.println("Deleted");
+//			this.hurt(1);
+		}
+	}
 
 	@Override
 	public void render(Graphics g) {
@@ -29,5 +35,11 @@ public abstract class StaticEntity extends Entity {
 		handler.getWorld().getEntityManager().addEntity(new Coin(handler, this.x, this.y));
 	}
 	
-	
+	public boolean checkMeteorCollision() {
+		for(Entity e: handler.getWorld().getEntityManager().getEntities())
+			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage()) {
+				return true;
+		}
+		return false;
+	}
 }
