@@ -19,12 +19,15 @@ public class Assets {
 	public static BufferedImage[] meteor;
 	public static BufferedImage[] btn_start;
 	public static BufferedImage[] background;
+	public static BufferedImage[] coin;
+
 
 	public static void init() {
 		try {
 //			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
 			btn_start  = new BufferedImage[2];
 			background = new BufferedImage[6];
+			coin = new BufferedImage[16];
 
 			playerDown = new BufferedImage[6];
 			playerUp = new BufferedImage[6];
@@ -34,6 +37,23 @@ public class Assets {
 			playerIdleLeft = new BufferedImage[4];
 
 			meteor = new BufferedImage[21];
+			
+			coin[0] = ImageIO.read(new File("res/coin/coin0.png"));
+			coin[1] = ImageIO.read(new File("res/coin/coin1.png"));
+			coin[2] = ImageIO.read(new File("res/coin/coin2.png"));
+			coin[3] = ImageIO.read(new File("res/coin/coin3.png"));
+			coin[4] = ImageIO.read(new File("res/coin/coin4.png"));
+			coin[5] = ImageIO.read(new File("res/coin/coin5.png"));
+			coin[6] = ImageIO.read(new File("res/coin/coin6.png"));
+			coin[7] = ImageIO.read(new File("res/coin/coin7.png"));
+			coin[8] = ImageIO.read(new File("res/coin/coin8.png"));
+			coin[9] = ImageIO.read(new File("res/coin/coin9.png"));
+			coin[10] = ImageIO.read(new File("res/coin/coin10.png"));
+			coin[11] = ImageIO.read(new File("res/coin/coin11.png"));
+			coin[12] = ImageIO.read(new File("res/coin/coin12.png"));
+			coin[13] = ImageIO.read(new File("res/coin/coin13.png"));
+			coin[14] = ImageIO.read(new File("res/coin/coin14.png"));
+			coin[15] = ImageIO.read(new File("res/coin/coin15.png"));
 			
 			btn_start[0] = ImageIO.read(new File("res/textures/start.png"));
 			btn_start[1] = ImageIO.read(new File("res/textures/start2.png"));

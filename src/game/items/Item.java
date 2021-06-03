@@ -14,6 +14,7 @@ public class Item {
 	public static Item woodItem = new Item(Assets.wooditem, "wood", 0);
 	public static Item rockItem = new Item(Assets.rockitem,"rock", 1);
 	//class
+
 	 public static final int ITEMWIDTH= 32, ITEMHEIGHT= 32;
 	 protected Handler handler;
 	 protected BufferedImage texture;
