@@ -66,7 +66,6 @@ public class Player extends Creature {
 	}
 	
 	public void checkAttacks() {
-		
 		attackTimer += System.currentTimeMillis() - lastAttackTimer;
 		lastAttackTimer = System.currentTimeMillis();
 		if(attackTimer < attackCooldown)
@@ -135,10 +134,10 @@ public class Player extends Creature {
 				(int)(y - handler.getGameCamera().getyOffset()), width, height, null);
 		
 		// dev mode :D 
-//		g.setColor(Color.red);
-//		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
-//				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
-//				bounds.width, bounds.height);
+		g.setColor(Color.red);
+		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
+				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
+				bounds.width, bounds.height);
 	}
 	
 	private BufferedImage getCurrentAnimationFrame() {

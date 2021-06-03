@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 
 import game.Game;
 import game.Handler;
+import game.entities.meteor.Meteor;
 
 public abstract class Entity {
 	
@@ -59,7 +60,7 @@ public abstract class Entity {
 	
 	public boolean checkEntityCollisions(float xOffset, float yOffset) {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
-			if(e.equals(this))
+			if(e.equals(this) || e instanceof Meteor)
 				continue;
 			if(e.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
 				return true;
