@@ -27,8 +27,7 @@ public class UIImageBackground extends UIObject {
 
 	@Override
 	public void onClick() {
-		clicker.onClick();
-		
+//		clicker.onClick();
 	} 
 	
 }

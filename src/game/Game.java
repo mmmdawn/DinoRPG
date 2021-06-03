@@ -19,9 +19,8 @@ public class Game implements Runnable{
 	private int width, height;
 	private boolean running = false;
 	private Thread thread;
-	private BufferStrategy bs;
-	private Graphics g;
-	
+	private BufferStrategy bufferStrategy;
+	private Graphics graphic;
 	
 	//State
 	public State gameState;
@@ -72,22 +71,22 @@ public class Game implements Runnable{
 	};
 	
 	private void render() {
-		bs = display.getCanvas().getBufferStrategy();
-		if(bs == null) {
+		bufferStrategy = display.getCanvas().getBufferStrategy();
+		if(bufferStrategy == null) {
 			display.getCanvas().createBufferStrategy(3);
 			return;
 		}
 		
-		g = bs.getDrawGraphics();
+		graphic = bufferStrategy.getDrawGraphics();
 		// Clear Screen
-		g.clearRect(0, 0, width, height);
+		graphic.clearRect(0, 0, width, height);
 		
 		//Draw here
 		if(State.getState() != null)
-			State.getState().render(g);
+			State.getState().render(graphic);
 		//End Drawing!
-		bs.show();
-		g.dispose();
+		bufferStrategy.show();
+		graphic.dispose();
 	}
 
 	@Override
@@ -143,6 +142,10 @@ public class Game implements Runnable{
 	}
 	
 	
+	public Display getDisplay() {
+		return display;
+	}
+
 	public KeyManager getKeyManager() {
 		return keyManager;
 	}
