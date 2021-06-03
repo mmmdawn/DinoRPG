@@ -3,7 +3,7 @@ package game.entities.meteor;
 import game.Handler;
 
 public class MeteorGenerator {
-	private static final long SPAWN_DELAY_TIME = 30;
+	private static long SPAWN_DELAY_TIME = 1;
 	private float x, y, xOffset, yOffset;
 	
 	private Handler handler;
