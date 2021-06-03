@@ -22,7 +22,9 @@ public abstract class Item extends Entity{
 	public void tick() {
 		// TODO Auto-generated method stub
 		animation.tick();
-//		if (handler.getGame().get)
+		if (handler.getWorld().getEntityManager().getPlayer().getCollisionBounds(0f, 0f).intersects(this.getCollisionBounds(0f, 0f))) {
+			this.hurt(1);
+		}
 	}
 
 	@Override
