@@ -23,7 +23,7 @@ public class Assets {
 			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
 			
 			btn_start  = new BufferedImage[2];
-			background = new BufferedImage[1];
+			background = new BufferedImage[6];
 
 			playerDown = new BufferedImage[6];
 			playerUp = new BufferedImage[6];
@@ -39,7 +39,12 @@ public class Assets {
 			
 			btn_start[0] = ImageIO.read(new File("res/textures/start.png"));
 			btn_start[1] = ImageIO.read(new File("res/textures/start2.png"));
-			background[0] = ImageIO.read(new File("res/textures/background.png"));
+			background[0] = ImageIO.read(new File("res/textures/background1.png"));
+			background[1] = ImageIO.read(new File("res/textures/background2.png"));
+			background[2] = ImageIO.read(new File("res/textures/background3.png"));
+			background[3] = ImageIO.read(new File("res/textures/background4.png"));
+			background[4] = ImageIO.read(new File("res/textures/background5.png"));
+			background[5] = ImageIO.read(new File("res/textures/background6.png"));
 			
 			playerDown[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
 			playerDown[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
@@ -124,11 +129,6 @@ public class Assets {
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
 			rockitem = ImageIO.read(new File("res/textures/rockitem.png"));
 			wooditem = ImageIO.read(new File("res/textures/wooditem.png"));
-			buaitem = ImageIO.read(new File("res/textures/bua.png"));
-			chuyitem = ImageIO.read(new File("res/textures/chuy.png"));
-			cungitem = ImageIO.read(new File("res/textures/cung.png"));
-			
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

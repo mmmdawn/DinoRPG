@@ -3,26 +3,25 @@ package game.ui;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import game.gfx.Animation;
+import game.gfx.Assets;
+
 public class UIImageBackground extends UIObject {
-	
-	private BufferedImage[] images;
-	private ClickListener clicker;
-	public UIImageBackground(float x, float y, int width, int height, BufferedImage[] images) {
+	private Animation animation = new Animation(100, Assets.background);
+
+	public UIImageBackground(int x, int y, int width, int height) {
 		super(x, y, width, height);
-		this.images = images;
 	}
+
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
-		
+		animation.tick();
 	}
 
 	@Override
 	public void render(Graphics g) {
-		
-			g.drawImage(images[0], (int)x, (int)y, width, height, null);
-	
-		
+			g.drawImage(animation.getCurrentFrame(), (int)x, (int)y, width, height, null);
 	}
 
 	@Override
