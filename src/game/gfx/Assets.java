@@ -11,7 +11,7 @@ public class Assets {
 	
 //	private static final int width = 64, height = 64;
 
-	public static Font font28;
+//	public static Font font28;
 	public static BufferedImage dirt, grass, brick, water;
 	public static BufferedImage tree1, tree2, tree3, tree4, tree5;
 	public static BufferedImage rock1, rock2, rockitem, wooditem;
@@ -22,8 +22,7 @@ public class Assets {
 
 	public static void init() {
 		try {
-			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
-			
+//			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
 			btn_start  = new BufferedImage[2];
 			background = new BufferedImage[6];
 

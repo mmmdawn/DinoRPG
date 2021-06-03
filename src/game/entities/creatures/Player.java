@@ -33,7 +33,6 @@ public class Player extends Creature {
 
 	@Override
 	public void tick() {
-		System.out.println(this.health);
 		// Animations
 		animationDown.tick();
 		animationUp.tick();
@@ -46,15 +45,13 @@ public class Player extends Creature {
 		move();
 		handler.getGameCamera().setCameraPosition(this);
 		checkMeteorCollision();
-		
-		
 	}
 	
 	public void checkMeteorCollision() {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
 			if(e.equals(this))
 				continue;
-			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor) {
+			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage()) {
 				this.hurt(1);
 			}
 		}
@@ -63,7 +60,6 @@ public class Player extends Creature {
 	private void getInput() {
 		xMove = 0;
 		yMove = 0;
-		
 		
 		if(handler.getKeyManager().up)
 			yMove -= speed;
@@ -74,9 +70,6 @@ public class Player extends Creature {
 		if(handler.getKeyManager().right)
 			xMove += speed;	
 	}
-	public void die() {
-		System.out.println("you lose!!");
-	}
 
 	@Override
 	public void render(Graphics g) {
@@ -84,10 +77,10 @@ public class Player extends Creature {
 				(int)(y - handler.getGameCamera().getyOffset()), width, height, null);
 		
 		// dev mode :D 
-		g.setColor(Color.red);
-		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
-				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
-				bounds.width, bounds.height);
+//		g.setColor(Color.red);
+//		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
+//				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
+//				bounds.width, bounds.height);
 	}
 	
 	private BufferedImage getCurrentAnimationFrame() {
@@ -112,6 +105,8 @@ public class Player extends Creature {
 		} else return animationIdleRight.getCurrentFrame();
 	}
 
-	
-	
+	public void die() {
+		System.out.println("you lose!!");
+	}
+
 }

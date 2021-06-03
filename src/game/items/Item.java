@@ -13,10 +13,6 @@ public class Item {
 	public static Item[] items = new Item[256];
 	public static Item woodItem = new Item(Assets.wooditem, "wood", 0);
 	public static Item rockItem = new Item(Assets.rockitem,"rock", 1);
-	public static Item buaItem = new Item(Assets.buaitem,"Super minotaure", 2);
-	public static Item cungItem = new Item(Assets.cungitem,"Super crossbow", 3);
-	public static Item chuyItem = new Item(Assets.chuyitem,"Super mace", 4);
-	
 	//class
 	 public static final int ITEMWIDTH= 32, ITEMHEIGHT= 32;
 	 protected Handler handler;
