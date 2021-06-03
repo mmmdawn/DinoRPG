@@ -26,6 +26,15 @@ public abstract class Item extends Entity{
 			this.hurt(1);
 		}
 	}
+	
+	@Override
+	public void render(Graphics g) {
+		g.drawImage(animation.getCurrentFrame(), (int)(x - handler.getGameCamera().getxOffset()), (int)(y - handler.getGameCamera().getyOffset()), width, height, null);
+//		g.setColor(Color.blue);
+//		g.fillRect((int)(x + bounds.x - handler.getGameCamera().getxOffset()),
+//				(int)(y + bounds.y - handler.getGameCamera().getyOffset()),
+//				bounds.width, bounds.height);
+	}
 
 	@Override
 	public void die() {

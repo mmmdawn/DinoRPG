@@ -5,7 +5,6 @@ import java.awt.Graphics;
 
 import game.Handler;
 import game.gfx.Assets;
-import game.items.Item;
 import game.tiles.Tile;
 
 public class Tree1 extends StaticEntity{
@@ -36,7 +35,7 @@ public class Tree1 extends StaticEntity{
 
 	@Override
 	public void die() {
-		handler.getWorld().getItemManager().addItem(Item.woodItem.createNew((int)x,(int) y));
+//		handler.getWorld().getItemManager().addItem(Item.woodItem.createNew((int)x,(int) y));
 		
 	}
 }

@@ -21,6 +21,7 @@ public class Game implements Runnable{
 	private Thread thread;
 	private BufferStrategy bufferStrategy;
 	private Graphics graphic;
+	private int score = 0;
 	
 	//State
 	public State gameState;
@@ -162,5 +163,13 @@ public class Game implements Runnable{
 	
 	public int getHeight() {
 		return height;
+	}
+	
+	public int getScore() {
+		return this.score;
+	}
+	
+	public void setScore(int score) {
+		this.score = score;
 	}
 }

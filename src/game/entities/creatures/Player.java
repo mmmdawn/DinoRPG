@@ -107,6 +107,7 @@ public class Player extends Creature {
 
 	public void die() {
 		System.out.println("you lose!!");
+		System.out.println(handler.getGame().getScore());
 	}
 
 }

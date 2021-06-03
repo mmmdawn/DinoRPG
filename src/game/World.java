@@ -1,19 +1,16 @@
 package game;
 
 import java.awt.Graphics;
-
 import game.entities.EntityManager;
 import game.entities.creatures.Player;
 import game.entities.meteor.Meteor;
 import game.entities.meteor.MeteorGenerator;
 import game.entities.statics.*;
-import game.items.ItemManager;
 import game.tiles.Tile;
 import game.utils.Utils;
 
 public class World {
 	private EntityManager entityManager;
-	private ItemManager itemManager;
 	private MeteorGenerator meteorGenerator;
 	private Handler handler;
 	private int width, height;
@@ -28,7 +25,6 @@ public class World {
 		this.handler = handler;
 		meteorGenerator = new MeteorGenerator(handler);
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-		itemManager = new ItemManager(handler);
 		
 		entityManager.addEntity(new Tree1(handler, 64, 64));
 		entityManager.addEntity(new Tree1(handler, 128, 50));
@@ -137,7 +133,6 @@ public class World {
 	}
 	public void tick() {
 		entityManager.tick();
-		itemManager.tick();
 	}
 	
 	public void render(Graphics g) {
@@ -151,7 +146,6 @@ public class World {
 						(int)(y *Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
 			}
 		}
-		itemManager.render(g);
 		entityManager.render(g);
 	}
 	  
@@ -184,10 +178,6 @@ public class World {
 		return meteorGenerator;
 	}
 
-	public ItemManager getItemManager() {
-		return itemManager;
-	}
-	
 	public int getWidth() {
 		return width;
 	}
