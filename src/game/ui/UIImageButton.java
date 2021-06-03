@@ -31,6 +31,5 @@ public class UIImageButton extends UIObject {
 	@Override
 	public void onClick() {
 		clicker.onClick();
-		
 	} 
 }

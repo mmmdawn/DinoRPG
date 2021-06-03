@@ -21,7 +21,7 @@ public class Game implements Runnable{
 	private Thread thread;
 	private BufferStrategy bufferStrategy;
 	private Graphics graphic;
-	private int score = 0;
+	private int score = 0, bestScore = 0;
 	
 	//State
 	public State gameState;
@@ -66,6 +66,9 @@ public class Game implements Runnable{
 	}
 	
 	private void tick() {
+		if (score > bestScore)
+			bestScore = score;
+
 		keyManager.tick();
 		if(State.getState() != null)
 			State.getState().tick();
@@ -132,8 +135,8 @@ public class Game implements Runnable{
 	}
 	
 	
-	public Display getDisplay() {
-		return display;
+	public Graphics getGraphic() {
+		return this.graphic;
 	}
 
 	public KeyManager getKeyManager() {
@@ -162,5 +165,9 @@ public class Game implements Runnable{
 	
 	public void setScore(int score) {
 		this.score = score;
+	}
+	
+	public int getBestScore() {
+		return bestScore;
 	}
 }

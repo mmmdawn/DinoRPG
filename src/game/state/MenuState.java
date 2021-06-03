@@ -1,8 +1,10 @@
 package game.state;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import game.Handler;
 import game.gfx.Assets;
+import game.gfx.Text;
 import game.ui.ClickListener;
 import game.ui.UIImageBackground;
 import game.ui.UIImageButton;
@@ -33,9 +35,13 @@ public class MenuState extends State{
 	public void tick() {
 		uiManager.tick();
 	}
+
 	@Override
 	public void render(Graphics g) {
 		uiManager.render(g);
+
+		Text.drawString(g,"Best Score: " + Integer.toString(handler.getGame().getBestScore()),
+				20, 40, false, Color.WHITE, Assets.font2);
 	}
 	
 }

@@ -15,7 +15,6 @@ public class UIImageBackground extends UIObject {
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
 		animation.tick();
 	}
 
@@ -26,7 +25,6 @@ public class UIImageBackground extends UIObject {
 
 	@Override
 	public void onClick() {
-//		clicker.onClick();
 	} 
 	
 }

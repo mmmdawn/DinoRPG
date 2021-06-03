@@ -1,5 +1,6 @@
 package game.state;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import game.Game;
@@ -8,6 +9,8 @@ import game.World;
 import game.entities.creatures.Player;
 import game.entities.statics.Tree1;
 import game.tiles.Tile;
+import game.gfx.Assets;
+import game.gfx.Text;
 
 public class GameState extends State{
 //	private Player player;
@@ -31,12 +34,15 @@ public class GameState extends State{
 			handler.getWorld().getMeteorGenerator().increaseDifficulty();
 			lastScore = newScore;
 		}
+		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		world.render(g);
-//		player.render(g);
+
+		Text.drawString(g,"Score: " + Integer.toString(handler.getGame().getScore()),
+				20, 40, false, Color.WHITE, Assets.font1);
 		
 	}
 

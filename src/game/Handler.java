@@ -13,10 +13,6 @@ public class Handler {
 		this.game = game;
 	}
 	
-	public Display getDisplay() {
-		return game.getDisplay();
-	}
-
 	public GameCamera getGameCamera() {
 		return game.getGameCamera();
 	}
