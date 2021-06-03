@@ -17,7 +17,6 @@ public class Meteor extends Entity{
 	private MeteorAnimation animation;
 	
 	public Meteor(Handler handler, float x, float y) {
-		// TODO Auto-generated constructor stub
 		super(handler, x, y, 100, 400);
 		animation = new MeteorAnimation(35, Assets.meteor);
 		this.setBounds(new Rectangle(5, 350, 90, 50));
