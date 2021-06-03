@@ -3,7 +3,7 @@ package game.entities.meteor;
 import game.Handler;
 
 public class MeteorGenerator {
-	private static long SPAWN_DELAY_TIME = 100;
+	private static long spawn_delay = 500;
 	private float x, y, xOffset, yOffset;
 	
 	private Handler handler;
@@ -19,7 +19,7 @@ public class MeteorGenerator {
 	public Meteor getRandomMeteor(Handler handler) {
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
-		if (timer >= SPAWN_DELAY_TIME) {
+		if (timer >= spawn_delay) {
 			timer = 0;
 			xOffset = handler.getGameCamera().getxOffset();
 			yOffset = handler.getGameCamera().getyOffset();
@@ -28,5 +28,11 @@ public class MeteorGenerator {
 //			System.out.println(String.valueOf(x) + ", " + String.valueOf(y));
 			return new Meteor(handler, x, y);
 		} else return null;
+	}
+	
+	public void increaseDifficulty() {
+		if(spawn_delay == 0)
+			return;
+		spawn_delay -= 20;
 	}
 }
