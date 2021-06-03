@@ -17,7 +17,7 @@ public class Assets {
 	public static BufferedImage rock1, rock2, rockitem, wooditem;
 	public static BufferedImage[] playerIdleLeft, playerIdleRight, playerDown, playerUp, playerLeft, playerRight;
 	public static BufferedImage[] meteor;
-	public static BufferedImage[] btn_start;
+	public static BufferedImage[] button_play, button_exit;
 	public static BufferedImage[] background;
 	public static BufferedImage[] coin;
 
@@ -25,7 +25,8 @@ public class Assets {
 	public static void init() {
 		try {
 //			font28 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
-			btn_start  = new BufferedImage[2];
+			button_play  = new BufferedImage[2];
+			button_exit  = new BufferedImage[2];
 			background = new BufferedImage[6];
 			coin = new BufferedImage[16];
 
@@ -55,14 +56,17 @@ public class Assets {
 			coin[14] = ImageIO.read(new File("res/coin/coin14.png"));
 			coin[15] = ImageIO.read(new File("res/coin/coin15.png"));
 			
-			btn_start[0] = ImageIO.read(new File("res/textures/start.png"));
-			btn_start[1] = ImageIO.read(new File("res/textures/start2.png"));
-			background[0] = ImageIO.read(new File("res/textures/background1.png"));
-			background[1] = ImageIO.read(new File("res/textures/background2.png"));
-			background[2] = ImageIO.read(new File("res/textures/background3.png"));
-			background[3] = ImageIO.read(new File("res/textures/background4.png"));
-			background[4] = ImageIO.read(new File("res/textures/background5.png"));
-			background[5] = ImageIO.read(new File("res/textures/background6.png"));
+			button_play[0] = ImageIO.read(new File("res/ui/play1.png"));
+			button_play[1] = ImageIO.read(new File("res/ui/play2.png"));
+			button_exit[0] = ImageIO.read(new File("res/ui/exit1.png"));
+			button_exit[1] = ImageIO.read(new File("res/ui/exit2.png"));
+
+			background[0] = ImageIO.read(new File("res/ui/background1.png"));
+			background[1] = ImageIO.read(new File("res/ui/background2.png"));
+			background[2] = ImageIO.read(new File("res/ui/background3.png"));
+			background[3] = ImageIO.read(new File("res/ui/background4.png"));
+			background[4] = ImageIO.read(new File("res/ui/background5.png"));
+			background[5] = ImageIO.read(new File("res/ui/background6.png"));
 			
 			playerDown[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
 			playerDown[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));

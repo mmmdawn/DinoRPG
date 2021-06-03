@@ -16,12 +16,17 @@ public class MenuState extends State{
 		uiManager = new UIManager(handler);
 		handler.getMouseManager().setUIManager(uiManager);
 		uiManager.addObject(new UIImageBackground(0, 0, 1366, 768));
-		uiManager.addObject(new UIImageButton(900, 500, 256, 360, Assets.btn_start, new ClickListener() {
+		uiManager.addObject(new UIImageButton(583, 536, 200, 81, Assets.button_play, new ClickListener() {
 			public void onClick() {
 				handler.getMouseManager().setUIManager(null);
 				State.setState(handler.getGame().gameState);
 			}
-			}));
+		}));
+		uiManager.addObject(new UIImageButton(583, 637, 200, 81, Assets.button_exit, new ClickListener() {
+			public void onClick() {
+				handler.getGame().getDisplay().getFrame().dispose();
+			}
+		}));
 	}
 	
 	@Override
