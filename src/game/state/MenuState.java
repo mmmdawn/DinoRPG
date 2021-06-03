@@ -24,7 +24,7 @@ public class MenuState extends State{
 		}));
 		uiManager.addObject(new UIImageButton(583, 637, 200, 81, Assets.button_exit, new ClickListener() {
 			public void onClick() {
-				handler.getGame().getDisplay().getFrame().dispose();
+				System.exit(0);
 			}
 		}));
 	}
