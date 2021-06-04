@@ -7,10 +7,11 @@ import game.gfx.Animation;
 import game.gfx.Assets;
 
 public class UIImageBackground extends UIObject {
-	private Animation animation = new Animation(100, Assets.background);
+	private Animation animation;
 
-	public UIImageBackground(int x, int y, int width, int height) {
+	public UIImageBackground(Animation animation, int x, int y, int width, int height) {
 		super(x, y, width, height);
+		this.animation = animation;
 	}
 
 	@Override

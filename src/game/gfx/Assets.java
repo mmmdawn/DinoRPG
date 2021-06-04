@@ -19,16 +19,19 @@ public class Assets {
 	public static BufferedImage[] meteor;
 	public static BufferedImage[] button_play, button_exit;
 	public static BufferedImage[] background;
+	public static BufferedImage[] bestScore, score;
 	public static BufferedImage[] coin;
 
 
 	public static void init() {
 		try {
 			font1 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
-			font2 = FontLoader.loadFont("res/fonts/slkscr.ttf", 40);
+			font2 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
 			button_play  = new BufferedImage[2];
 			button_exit  = new BufferedImage[2];
 			background = new BufferedImage[6];
+			bestScore = new BufferedImage[1];
+			score = new BufferedImage[1];
 			coin = new BufferedImage[16];
 
 			playerDown = new BufferedImage[6];
@@ -39,6 +42,9 @@ public class Assets {
 			playerIdleLeft = new BufferedImage[4];
 
 			meteor = new BufferedImage[21];
+			
+			bestScore[0] = ImageIO.read(new File("res/ui/bestScore.png"));
+			score[0] = ImageIO.read(new File("res/ui/score.png"));
 			
 			coin[0] = ImageIO.read(new File("res/coin/coin0.png"));
 			coin[1] = ImageIO.read(new File("res/coin/coin1.png"));
@@ -69,43 +75,43 @@ public class Assets {
 			background[4] = ImageIO.read(new File("res/ui/background5.png"));
 			background[5] = ImageIO.read(new File("res/ui/background6.png"));
 			
-			playerDown[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
-			playerDown[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
-			playerDown[2] = ImageIO.read(new File("res/dichuyen/phai3.png"));
-			playerDown[3] = ImageIO.read(new File("res/dichuyen/phai4.png"));
-			playerDown[4] = ImageIO.read(new File("res/dichuyen/phai5.png"));
-			playerDown[5] = ImageIO.read(new File("res/dichuyen/phai6.png"));
+			playerDown[0] = ImageIO.read(new File("res/move/phai1.png"));
+			playerDown[1] = ImageIO.read(new File("res/move/phai2.png"));
+			playerDown[2] = ImageIO.read(new File("res/move/phai3.png"));
+			playerDown[3] = ImageIO.read(new File("res/move/phai4.png"));
+			playerDown[4] = ImageIO.read(new File("res/move/phai5.png"));
+			playerDown[5] = ImageIO.read(new File("res/move/phai6.png"));
 			
-			playerUp[0] = ImageIO.read(new File("res/dichuyen/trai1.png"));
-			playerUp[1] = ImageIO.read(new File("res/dichuyen/trai2.png"));
-			playerUp[2] = ImageIO.read(new File("res/dichuyen/trai3.png"));
-			playerUp[3] = ImageIO.read(new File("res/dichuyen/trai4.png"));
-			playerUp[4] = ImageIO.read(new File("res/dichuyen/trai5.png"));
-			playerUp[5] = ImageIO.read(new File("res/dichuyen/trai6.png"));
+			playerUp[0] = ImageIO.read(new File("res/move/trai1.png"));
+			playerUp[1] = ImageIO.read(new File("res/move/trai2.png"));
+			playerUp[2] = ImageIO.read(new File("res/move/trai3.png"));
+			playerUp[3] = ImageIO.read(new File("res/move/trai4.png"));
+			playerUp[4] = ImageIO.read(new File("res/move/trai5.png"));
+			playerUp[5] = ImageIO.read(new File("res/move/trai6.png"));
 			
-			playerLeft[0] = ImageIO.read(new File("res/dichuyen/trai1.png"));
-			playerLeft[1] = ImageIO.read(new File("res/dichuyen/trai2.png"));
-			playerLeft[2] = ImageIO.read(new File("res/dichuyen/trai3.png"));
-			playerLeft[3] = ImageIO.read(new File("res/dichuyen/trai4.png"));
-			playerLeft[4] = ImageIO.read(new File("res/dichuyen/trai5.png"));
-			playerLeft[5] = ImageIO.read(new File("res/dichuyen/trai6.png"));
+			playerLeft[0] = ImageIO.read(new File("res/move/trai1.png"));
+			playerLeft[1] = ImageIO.read(new File("res/move/trai2.png"));
+			playerLeft[2] = ImageIO.read(new File("res/move/trai3.png"));
+			playerLeft[3] = ImageIO.read(new File("res/move/trai4.png"));
+			playerLeft[4] = ImageIO.read(new File("res/move/trai5.png"));
+			playerLeft[5] = ImageIO.read(new File("res/move/trai6.png"));
 
-			playerRight[0] = ImageIO.read(new File("res/dichuyen/phai1.png"));
-			playerRight[1] = ImageIO.read(new File("res/dichuyen/phai2.png"));
-			playerRight[2] = ImageIO.read(new File("res/dichuyen/phai3.png"));
-			playerRight[3] = ImageIO.read(new File("res/dichuyen/phai4.png"));
-			playerRight[4] = ImageIO.read(new File("res/dichuyen/phai5.png"));
-			playerRight[5] = ImageIO.read(new File("res/dichuyen/phai6.png"));
+			playerRight[0] = ImageIO.read(new File("res/move/phai1.png"));
+			playerRight[1] = ImageIO.read(new File("res/move/phai2.png"));
+			playerRight[2] = ImageIO.read(new File("res/move/phai3.png"));
+			playerRight[3] = ImageIO.read(new File("res/move/phai4.png"));
+			playerRight[4] = ImageIO.read(new File("res/move/phai5.png"));
+			playerRight[5] = ImageIO.read(new File("res/move/phai6.png"));
 			
-			playerIdleRight[0] = ImageIO.read(new File("res/dichuyen/idleRight1.png"));
-			playerIdleRight[1] = ImageIO.read(new File("res/dichuyen/idleRight2.png"));
-			playerIdleRight[2] = ImageIO.read(new File("res/dichuyen/idleRight3.png"));
-			playerIdleRight[3] = ImageIO.read(new File("res/dichuyen/idleRight4.png"));
+			playerIdleRight[0] = ImageIO.read(new File("res/move/idleRight1.png"));
+			playerIdleRight[1] = ImageIO.read(new File("res/move/idleRight2.png"));
+			playerIdleRight[2] = ImageIO.read(new File("res/move/idleRight3.png"));
+			playerIdleRight[3] = ImageIO.read(new File("res/move/idleRight4.png"));
 
-			playerIdleLeft[0] = ImageIO.read(new File("res/dichuyen/idleLeft1.png"));
-			playerIdleLeft[1] = ImageIO.read(new File("res/dichuyen/idleLeft2.png"));
-			playerIdleLeft[2] = ImageIO.read(new File("res/dichuyen/idleLeft3.png"));
-			playerIdleLeft[3] = ImageIO.read(new File("res/dichuyen/idleLeft4.png"));
+			playerIdleLeft[0] = ImageIO.read(new File("res/move/idleLeft1.png"));
+			playerIdleLeft[1] = ImageIO.read(new File("res/move/idleLeft2.png"));
+			playerIdleLeft[2] = ImageIO.read(new File("res/move/idleLeft3.png"));
+			playerIdleLeft[3] = ImageIO.read(new File("res/move/idleLeft4.png"));
 
 			meteor[0] = ImageIO.read(new File("res/meteor/meteor01.png"));
 			meteor[1] = ImageIO.read(new File("res/meteor/meteor02.png"));
@@ -129,7 +135,7 @@ public class Assets {
 			meteor[19] = ImageIO.read(new File("res/meteor/meteor20.png"));
 			meteor[20] = ImageIO.read(new File("res/meteor/meteor21.png"));
 			
-			tomb = ImageIO.read(new File("res/dichuyen/rip.png"));
+			tomb = ImageIO.read(new File("res/move/rip.png"));
 			dirt = ImageIO.read(new File("res/textures/dirt.png"));
 			grass = ImageIO.read(new File("res/textures/grass.png"));
 			brick = ImageIO.read(new File("res/textures/brick.png"));
