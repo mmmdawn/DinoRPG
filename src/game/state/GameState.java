@@ -2,6 +2,7 @@ package game.state;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.IOException;
 
 import game.Game;
 import game.Handler;
@@ -44,8 +45,17 @@ public class GameState extends State{
 			lastScore = newScore;
 		}
 		
-		if (handler.getWorld().getEntityManager().isPlayerIsDead() == true)
+		if (handler.getWorld().getEntityManager().isPlayerIsDead() == true) {
 			State.setState(new GameOverState(handler));
+			handler.getWorld().getMeteorGenerator().resetDifficulty();
+
+			try {
+				handler.getGame().getGameInfo().writeBestScore();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override

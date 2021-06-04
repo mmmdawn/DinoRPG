@@ -1,12 +1,34 @@
 package game;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class GameInfo {
+	private int difficulty = 0;
 	private int bestScore = 0;
 	private int score = 0;
-	private int difficulty = 0;
-	public GameInfo(Handler handler) {
-		// TODO Auto-generated constructor stub
+	File file = new File("data.bin");
+	FileReader fileReader;
+	FileWriter fileWriter;
+
+	public GameInfo(Handler handler) throws IOException {
 		score = 0;
+		
+		try {
+			fileReader = new FileReader(file);
+		} catch (FileNotFoundException e) {
+			file.createNewFile();
+			fileWriter = new FileWriter(file);
+			fileReader = new FileReader(file);
+			fileWriter.write(score);
+			fileWriter.close();
+		} finally {
+			bestScore = fileReader.read();
+			fileReader.close();
+		}
 	}
 	
 	public void tick() {
@@ -15,12 +37,16 @@ public class GameInfo {
 		}
 	}
 	
+	public void writeBestScore() throws IOException {
+			fileWriter = new FileWriter(file);
+			fileWriter.write(bestScore);
+			fileWriter.close();
+	}
+	
 	public int getBestScore() {
 		return bestScore;
 	}
-	public void setBestScore(int bestScore) {
-		this.bestScore = bestScore;
-	}
+
 	public int getScore() {
 		return score;
 	}

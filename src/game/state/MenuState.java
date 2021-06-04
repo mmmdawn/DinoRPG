@@ -2,6 +2,8 @@ package game.state;
 
 import java.awt.Color;
 import java.awt.Graphics;
+
+import game.Game;
 import game.Handler;
 import game.gfx.Animation;
 import game.gfx.Assets;

@@ -2,6 +2,7 @@ package game;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.io.IOException;
 
 import game.display.Display;
 import game.gfx.Assets;
@@ -43,6 +44,13 @@ public class Game implements Runnable{
 	}
 	
 	private void init() {
+		try {
+			gameInfo = new GameInfo(handler);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		display = new Display(title, width, height);
 		display.getFrame().addKeyListener(keyManager);
 		display.getFrame().addMouseListener(mouseManager);
@@ -54,7 +62,6 @@ public class Game implements Runnable{
 		
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
-		gameInfo = new GameInfo(handler);
 		State.setState(new MenuState(handler));
 //		State.setState(new GameOverState(handler));
 		
@@ -62,6 +69,7 @@ public class Game implements Runnable{
 	
 	private void tick() {
 		keyManager.tick();
+		gameInfo.tick();
 		if(State.getState() != null)
 			State.getState().tick();
 	};
@@ -89,7 +97,6 @@ public class Game implements Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		init();
-		
 		int fps = 60;
 		double timePerTick = 1000000000/fps;
 		double delta = 0;
@@ -121,7 +128,6 @@ public class Game implements Runnable{
 		try {
 			thread.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
