@@ -12,8 +12,6 @@ public abstract class Tile {
 	public static Tile grassTile1 = new GrassTile1(2);
 	public static Tile grassTile2 = new GrassTile2(3);
 	public static Tile grassTile3 = new GrassTile3(4);
-	public static Tile brickTile = new BrickTile(5);
-	public static Tile dirtTile = new DirtTile(6);
 	
 	// Non-static 
 	protected BufferedImage texture;
