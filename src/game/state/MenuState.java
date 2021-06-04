@@ -40,8 +40,8 @@ public class MenuState extends State{
 	public void render(Graphics g) {
 		uiManager.render(g);
 
-		Text.drawString(g,"Best Score: " + Integer.toString(handler.getGame().getGameInfo().getBestScore()),
-				20, 40, false, Color.WHITE, Assets.font2);
+		String bestScore = String.format("%s%7d", "Best Score:", handler.getGame().getGameInfo().getBestScore());
+		Text.drawString(g,bestScore, 20, 40, false, Color.WHITE, Assets.font2);
 	}
 	
 }

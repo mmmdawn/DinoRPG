@@ -41,10 +41,10 @@ public class GameState extends State{
 	public void render(Graphics g) {
 		world.render(g);
 
-		Text.drawString(g,"Score:      " + Integer.toString(handler.getGame().getGameInfo().getScore()),
-				20, 40, false, Color.WHITE, Assets.font1);
-		Text.drawString(g,"Difficulty: " + Integer.toString(handler.getGame().getGameInfo().getDifficulty()),
-				20, 70, false, Color.WHITE, Assets.font1);
+		String score = String.format("%-12s%4d", "Score:", handler.getGame().getGameInfo().getScore());
+		String difficulty = String.format("%-12s%4d", "Difficulty:", handler.getGame().getGameInfo().getDifficulty());
+		Text.drawString(g, score, 20, 40, false, Color.WHITE, Assets.font1);
+		Text.drawString(g, difficulty, 20, 70, false, Color.WHITE, Assets.font1);
 	}
 
 }
