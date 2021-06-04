@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import game.entities.EntityManager;
 import game.entities.creatures.Player;
 import game.entities.items.Coin;
+import game.entities.items.CoinGenerator;
 import game.entities.meteor.Meteor;
 import game.entities.meteor.MeteorGenerator;
 import game.entities.statics.*;
@@ -13,6 +14,7 @@ import game.utils.Utils;
 public class World {
 	private EntityManager entityManager;
 	private MeteorGenerator meteorGenerator;
+	private CoinGenerator coinGenerator;
 	private Handler handler;
 	private int width, height;
 	private int spawnX, spawnY;
@@ -25,6 +27,7 @@ public class World {
 	public World(Handler handler, String path) {
 		this.handler = handler;
 		meteorGenerator = new MeteorGenerator(handler);
+		coinGenerator = new CoinGenerator();
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
 		
 		entityManager.addEntity(new Tree1(handler, 64, 64));
@@ -177,6 +180,10 @@ public class World {
 	
 	public MeteorGenerator getMeteorGenerator() {
 		return meteorGenerator;
+	}
+
+	public CoinGenerator getCoinGenerator() {
+		return coinGenerator;
 	}
 
 	public int getWidth() {

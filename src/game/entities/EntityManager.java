@@ -34,9 +34,10 @@ public class EntityManager {
 	
 	
 	public void tick() {
-		Entity e;
-
 		this.addEntity(handler.getWorld().getMeteorGenerator().getRandomMeteor(handler));
+		this.addEntity(handler.getWorld().getCoinGenerator().getRandomCoin(handler));
+
+		Entity e;
 		Iterator<Entity> it = entities.iterator();
 		while(it.hasNext()){
 			e = it.next();

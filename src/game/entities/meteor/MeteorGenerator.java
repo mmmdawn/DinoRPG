@@ -11,7 +11,6 @@ public class MeteorGenerator {
 	private long timer, lastTime;
 	
 	public MeteorGenerator(Handler handler) {
-		// TODO Auto-generated constructor stub
 		this.handler = handler;
 		timer = 0;
 		lastTime = System.currentTimeMillis();
