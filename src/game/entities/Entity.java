@@ -58,6 +58,16 @@ public abstract class Entity {
 		return new Rectangle((int)(x + bounds.x + xOffset), (int)(y + bounds.y + yOffset), bounds.width, bounds.height);
 	}
 	
+	public boolean isInCamera() {
+		float xOffset = handler.getGameCamera().getxOffset();
+		float yOffset = handler.getGameCamera().getyOffset();
+		if (x >= xOffset && x <= xOffset + handler.getWidth() &&
+				y >= yOffset && y <= yOffset + handler.getHeight()) {
+			return true;
+		}
+		return false;
+	}
+	
 	// getter, setter
 	public float getX() {
 		return x;

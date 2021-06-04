@@ -35,9 +35,11 @@ public abstract class StaticEntity extends Entity {
 	
 	public void checkMeteorCollision() {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities())
-			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage()) {
-				this.hurt(1);
-				break;
+			if (e.isInCamera())
+				if (e instanceof Meteor)
+					if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && ((Meteor)e).isDealDamage()) {
+						this.hurt(1);
+						break;
 		}
 	}
 }
