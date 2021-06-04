@@ -12,7 +12,7 @@ public class Assets {
 //	private static final int width = 64, height = 64;
 
 	public static Font font1, font2;
-	public static BufferedImage dirt, grass, brick, water;
+	public static BufferedImage dirt, grass, brick, water, tomb;
 	public static BufferedImage tree1, tree2, tree3, tree4, tree5;
 	public static BufferedImage rock1, rock2, rockitem, wooditem;
 	public static BufferedImage[] playerIdleLeft, playerIdleRight, playerDown, playerUp, playerLeft, playerRight;
@@ -129,6 +129,7 @@ public class Assets {
 			meteor[19] = ImageIO.read(new File("res/meteor/meteor20.png"));
 			meteor[20] = ImageIO.read(new File("res/meteor/meteor21.png"));
 			
+			tomb = ImageIO.read(new File("res/dichuyen/rip.png"));
 			dirt = ImageIO.read(new File("res/textures/dirt.png"));
 			grass = ImageIO.read(new File("res/textures/grass.png"));
 			brick = ImageIO.read(new File("res/textures/brick.png"));

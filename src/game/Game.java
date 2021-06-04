@@ -21,7 +21,7 @@ public class Game implements Runnable{
 	private Thread thread;
 	private BufferStrategy bufferStrategy;
 	private Graphics graphic;
-	private int score = 0, bestScore = 0;
+	private GameInfo gameInfo;
 	
 	//State
 	public State gameState;
@@ -42,8 +42,7 @@ public class Game implements Runnable{
 		this.height = height;
 		this.title = title;
 		keyManager = new KeyManager();
-		mouseManager = new MouseManager();
-		
+		mouseManager = new MouseManager();		
 	}
 	
 	private void init() {
@@ -58,7 +57,7 @@ public class Game implements Runnable{
 		
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
-		
+		gameInfo = new GameInfo(handler);
 		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
 		State.setState(menuState);
@@ -66,9 +65,6 @@ public class Game implements Runnable{
 	}
 	
 	private void tick() {
-		if (score > bestScore)
-			bestScore = score;
-
 		keyManager.tick();
 		if(State.getState() != null)
 			State.getState().tick();
@@ -151,23 +147,15 @@ public class Game implements Runnable{
 		return gameCamera;
 	}
 	
+	public GameInfo getGameInfo() {
+		return this.gameInfo;
+	}
+	
 	public int getWidth() {
 		return width;
 	}
 	
 	public int getHeight() {
 		return height;
-	}
-	
-	public int getScore() {
-		return this.score;
-	}
-	
-	public void setScore(int score) {
-		this.score = score;
-	}
-	
-	public int getBestScore() {
-		return bestScore;
 	}
 }

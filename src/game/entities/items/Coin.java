@@ -18,6 +18,6 @@ public class Coin extends Item {
 	@Override
 	protected void makeEffect() {
 		// TODO Auto-generated method stub
-		handler.getGame().setScore(handler.getGame().getScore() + 10);
+		handler.getGame().getGameInfo().setScore(handler.getGame().getGameInfo().getScore() + 10);
 	}
 }

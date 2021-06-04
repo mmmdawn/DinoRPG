@@ -3,7 +3,8 @@ package game.entities.meteor;
 import game.Handler;
 
 public class MeteorGenerator {
-	private static long spawn_delay = 500;
+	private static final long MAX_SPAWN_DELAY = 500;
+	private static long spawn_delay = MAX_SPAWN_DELAY;
 	private float x, y, xOffset, yOffset;
 	
 	private Handler handler;
@@ -34,5 +35,6 @@ public class MeteorGenerator {
 		if(spawn_delay == 0)
 			return;
 		spawn_delay -= 50;
+		handler.getGame().getGameInfo().setDifficulty((int)(MAX_SPAWN_DELAY - spawn_delay)/50);
 	}
 }

@@ -21,14 +21,14 @@ public class GameState extends State{
 		super(handler);
 		world = new World(handler, "res/worlds/world1.txt");
 		handler.setWorld(world);
-		handler.getGame().setScore(0);
-		lastScore = handler.getGame().getScore();
+		handler.getGame().getGameInfo().setScore(0);
+		lastScore = handler.getGame().getGameInfo().getScore();
 	}
 
 	@Override
 	public void tick() {
 		world.tick();
-		int newScore = handler.getGame().getScore();
+		int newScore = handler.getGame().getGameInfo().getScore();
 		int delta = newScore - lastScore;
 		if (delta >= 50) {
 			handler.getWorld().getMeteorGenerator().increaseDifficulty();
@@ -41,9 +41,10 @@ public class GameState extends State{
 	public void render(Graphics g) {
 		world.render(g);
 
-		Text.drawString(g,"Score: " + Integer.toString(handler.getGame().getScore()),
+		Text.drawString(g,"Score:      " + Integer.toString(handler.getGame().getGameInfo().getScore()),
 				20, 40, false, Color.WHITE, Assets.font1);
-		
+		Text.drawString(g,"Difficulty: " + Integer.toString(handler.getGame().getGameInfo().getDifficulty()),
+				20, 70, false, Color.WHITE, Assets.font1);
 	}
 
 }

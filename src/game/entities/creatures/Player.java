@@ -52,7 +52,7 @@ public class Player extends Creature {
 	public void checkMeteorCollision() {
 		for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
 			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(0, 0)) && e instanceof Meteor && ((Meteor)e).isDealDamage()) {
-//				this.hurt(1);
+				this.hurt(1);
 				break;
 			}
 		}
@@ -107,8 +107,7 @@ public class Player extends Creature {
 	}
 
 	public void die() {
-		System.out.println("you lose!!");
-		System.out.println(handler.getGame().getScore());
+		System.out.println(handler.getGame().getGameInfo().getScore());
 	}
 
 }
