@@ -151,6 +151,7 @@ public class Assets {
 			grass1 = ImageIO.read(new File("res/textures/grass1.png"));
 			grass2 = ImageIO.read(new File("res/textures/grass2.png"));
 			grass3 = ImageIO.read(new File("res/textures/grass3.png"));
+			water = ImageIO.read(new File("res/textures/water.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
 		} catch (IOException e) {
