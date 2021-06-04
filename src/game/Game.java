@@ -24,11 +24,6 @@ public class Game implements Runnable{
 	private Thread thread;
 	private String title;
 	
-	//State
-	public State gameState;
-	public State menuState;
-	public State gameOverState;
-	
 	//input
 	private KeyManager keyManager;
 	private MouseManager mouseManager;
@@ -60,10 +55,8 @@ public class Game implements Runnable{
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
 		gameInfo = new GameInfo(handler);
-//		gameState = new GameState(handler);
-		menuState = new MenuState(handler);
-//		gameOverState = new GameOverState(handler);
-		State.setState(menuState);
+		State.setState(new MenuState(handler));
+//		State.setState(new GameOverState(handler));
 		
 	}
 	
@@ -134,10 +127,6 @@ public class Game implements Runnable{
 	}
 	
 	
-	public Graphics getGraphic() {
-		return this.graphic;
-	}
-
 	public KeyManager getKeyManager() {
 		return keyManager;
 	}

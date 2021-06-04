@@ -8,16 +8,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Assets {
-	
-//	private static final int width = 64, height = 64;
-
-	public static Font font1, font2;
+	public static Font font1, font2, font3, font4, font5;
 	public static BufferedImage dirt, grass, brick, water, tomb;
 	public static BufferedImage tree1, tree2, tree3, tree4, tree5;
 	public static BufferedImage rock1, rock2, rockitem, wooditem;
 	public static BufferedImage[] playerIdleLeft, playerIdleRight, playerDown, playerUp, playerLeft, playerRight;
 	public static BufferedImage[] meteor;
-	public static BufferedImage[] button_play, button_exit;
+	public static BufferedImage[] button_play, button_exit, button_back;
 	public static BufferedImage[] background;
 	public static BufferedImage[] over;
 	public static BufferedImage[] bestScore, score;
@@ -26,10 +23,14 @@ public class Assets {
 
 	public static void init() {
 		try {
-			font1 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
-			font2 = FontLoader.loadFont("res/fonts/slkscr.ttf", 50);
+			font1 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 28);
+			font2 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 150);
+			font3 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 90);
+			font4 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 50);
+			font5 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 50);
 			button_play  = new BufferedImage[2];
 			button_exit  = new BufferedImage[2];
+			button_back  = new BufferedImage[2];
 			background = new BufferedImage[6];
 			bestScore = new BufferedImage[1];
 			score = new BufferedImage[1];
@@ -70,6 +71,8 @@ public class Assets {
 			button_play[1] = ImageIO.read(new File("res/ui/play2.png"));
 			button_exit[0] = ImageIO.read(new File("res/ui/exit1.png"));
 			button_exit[1] = ImageIO.read(new File("res/ui/exit2.png"));
+			button_back[0] = ImageIO.read(new File("res/ui/back0.png"));
+			button_back[1] = ImageIO.read(new File("res/ui/back1.png"));
 			
 			background[0] = ImageIO.read(new File("res/ui/background1.png"));
 			background[1] = ImageIO.read(new File("res/ui/background2.png"));
@@ -140,18 +143,16 @@ public class Assets {
 			
 			tomb = ImageIO.read(new File("res/move/rip.png"));
 			dirt = ImageIO.read(new File("res/textures/dirt.png"));
-			grass = ImageIO.read(new File("res/textures/grass.png"));
-			brick = ImageIO.read(new File("res/textures/brick.png"));
-			water = ImageIO.read(new File("res/textures/water.png"));
 			tree1 = ImageIO.read(new File("res/textures/cay.png"));
 			tree2 = ImageIO.read(new File("res/textures/cay2.png"));
 			tree3 = ImageIO.read(new File("res/textures/cay3.png"));
 			tree4 = ImageIO.read(new File("res/textures/cay4.png"));
 			tree5 = ImageIO.read(new File("res/textures/cay5.png"));
+			grass = ImageIO.read(new File("res/textures/grass.png"));
+			brick = ImageIO.read(new File("res/textures/brick.png"));
+			water = ImageIO.read(new File("res/textures/water.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
-			rockitem = ImageIO.read(new File("res/textures/rockitem.png"));
-			wooditem = ImageIO.read(new File("res/textures/wooditem.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
