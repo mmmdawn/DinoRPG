@@ -3,10 +3,10 @@ package game.tiles;
 
 import game.gfx.Assets;
 
-public class GrassTile extends Tile {
+public class GrassTile1 extends Tile {
 
-	public GrassTile( int id) {
-		super(Assets.grass, id);
+	public GrassTile1( int id) {
+		super(Assets.grass1, id);
 	}
 
 	@Override

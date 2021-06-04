@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 public class Assets {
 	public static Font font1, font2, font3, font4, font5;
-	public static BufferedImage dirt, grass, brick, water, tomb;
+	public static BufferedImage dirt, grass1, grass2, grass3, brick, water, tomb, sand;
 	public static BufferedImage tree1, tree2, tree3, tree4, tree5;
 	public static BufferedImage rock1, rock2, rockitem, wooditem;
 	public static BufferedImage[] playerIdleLeft, playerIdleRight, playerDown, playerUp, playerLeft, playerRight;
@@ -143,12 +143,15 @@ public class Assets {
 			
 			tomb = ImageIO.read(new File("res/move/rip.png"));
 			dirt = ImageIO.read(new File("res/textures/dirt.png"));
+			sand = ImageIO.read(new File("res/textures/sand.png"));
 			tree1 = ImageIO.read(new File("res/textures/cay.png"));
 			tree2 = ImageIO.read(new File("res/textures/cay2.png"));
 			tree3 = ImageIO.read(new File("res/textures/cay3.png"));
 			tree4 = ImageIO.read(new File("res/textures/cay4.png"));
 			tree5 = ImageIO.read(new File("res/textures/cay5.png"));
-			grass = ImageIO.read(new File("res/textures/grass.png"));
+			grass1 = ImageIO.read(new File("res/textures/grass1.png"));
+			grass2 = ImageIO.read(new File("res/textures/grass2.png"));
+			grass3 = ImageIO.read(new File("res/textures/grass3.png"));
 			brick = ImageIO.read(new File("res/textures/brick.png"));
 			water = ImageIO.read(new File("res/textures/water.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
