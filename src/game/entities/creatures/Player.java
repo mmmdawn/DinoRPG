@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import game.Handler;
 import game.entities.Entity;
 import game.entities.meteor.Meteor;
+import game.entities.statics.Tomb;
 import game.gfx.Animation;
 import game.gfx.Assets;
 
@@ -107,6 +108,7 @@ public class Player extends Creature {
 	}
 
 	public void die() {
+		handler.getWorld().getEntityManager().getNewEntityQueue().add(new Tomb(handler, x, y));
 		System.out.println(handler.getGame().getGameInfo().getScore());
 	}
 

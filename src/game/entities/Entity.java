@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 import game.Handler;
 import game.entities.items.Item;
 import game.entities.meteor.Meteor;
+import game.entities.statics.Tomb;
 
 public abstract class Entity {
 	
