@@ -19,6 +19,7 @@ public class Assets {
 	public static BufferedImage[] meteor;
 	public static BufferedImage[] button_play, button_exit;
 	public static BufferedImage[] background;
+	public static BufferedImage[] over;
 	public static BufferedImage[] bestScore, score;
 	public static BufferedImage[] coin;
 
@@ -26,25 +27,27 @@ public class Assets {
 	public static void init() {
 		try {
 			font1 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
-			font2 = FontLoader.loadFont("res/fonts/slkscr.ttf", 28);
+			font2 = FontLoader.loadFont("res/fonts/slkscr.ttf", 50);
 			button_play  = new BufferedImage[2];
 			button_exit  = new BufferedImage[2];
 			background = new BufferedImage[6];
 			bestScore = new BufferedImage[1];
 			score = new BufferedImage[1];
 			coin = new BufferedImage[16];
+			over = new BufferedImage[1];
 
-			playerDown = new BufferedImage[6];
 			playerUp = new BufferedImage[6];
 			playerLeft = new BufferedImage[6];
+			playerDown = new BufferedImage[6];
 			playerRight = new BufferedImage[6];
-			playerIdleRight = new BufferedImage[4];
 			playerIdleLeft = new BufferedImage[4];
+			playerIdleRight = new BufferedImage[4];
 
 			meteor = new BufferedImage[21];
-			
+
 			bestScore[0] = ImageIO.read(new File("res/ui/bestScore.png"));
 			score[0] = ImageIO.read(new File("res/ui/score.png"));
+			over[0] = ImageIO.read(new File("res/ui/over.png"));
 			
 			coin[0] = ImageIO.read(new File("res/coin/coin0.png"));
 			coin[1] = ImageIO.read(new File("res/coin/coin1.png"));
@@ -67,7 +70,7 @@ public class Assets {
 			button_play[1] = ImageIO.read(new File("res/ui/play2.png"));
 			button_exit[0] = ImageIO.read(new File("res/ui/exit1.png"));
 			button_exit[1] = ImageIO.read(new File("res/ui/exit2.png"));
-
+			
 			background[0] = ImageIO.read(new File("res/ui/background1.png"));
 			background[1] = ImageIO.read(new File("res/ui/background2.png"));
 			background[2] = ImageIO.read(new File("res/ui/background3.png"));

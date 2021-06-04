@@ -8,24 +8,26 @@ import game.gfx.Assets;
 import game.gfx.GameCamera;
 import game.input.KeyManager;
 import game.input.MouseManager;
+import game.state.GameOverState;
 import game.state.GameState;
 import game.state.MenuState;
 import game.state.State;
 
 public class Game implements Runnable{
 
-	private Display display;
-	private String title;
-	private int width, height;
-	private boolean running = false;
-	private Thread thread;
 	private BufferStrategy bufferStrategy;
-	private Graphics graphic;
+	private boolean running = false;
+	private int width, height;
 	private GameInfo gameInfo;
+	private Graphics graphic;
+	private Display display;
+	private Thread thread;
+	private String title;
 	
 	//State
 	public State gameState;
 	public State menuState;
+	public State gameOverState;
 	
 	//input
 	private KeyManager keyManager;
@@ -58,8 +60,9 @@ public class Game implements Runnable{
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
 		gameInfo = new GameInfo(handler);
-		gameState = new GameState(handler);
+//		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
+//		gameOverState = new GameOverState(handler);
 		State.setState(menuState);
 		
 	}

@@ -24,23 +24,24 @@ public class Player extends Creature {
 		bounds.height = 15;
 		
 		//animation
-		animationDown = new Animation(100, Assets.playerDown);
 		animationUp = new Animation(100, Assets.playerUp);
+		animationDown = new Animation(100, Assets.playerDown);
 		animationLeft = new Animation(100, Assets.playerLeft);
 		animationRight = new Animation(100, Assets.playerRight);
-		animationIdleRight = new Animation(100, Assets.playerIdleRight);
 		animationIdleLeft = new Animation(100, Assets.playerIdleLeft);
+		animationIdleRight = new Animation(100, Assets.playerIdleRight);
 	}
 
 	@Override
 	public void tick() {
 		// Animations
-		animationDown.tick();
 		animationUp.tick();
+		animationDown.tick();
 		animationLeft.tick();
 		animationRight.tick();
-		animationIdleRight.tick();
 		animationIdleLeft.tick();
+		animationIdleRight.tick();
+
 		//movement
 		getInput();
 		move();
@@ -110,6 +111,6 @@ public class Player extends Creature {
 	public void die() {
 		handler.getWorld().getEntityManager().getNewEntityQueue().add(new Tomb(handler, x, y));
 		System.out.println(handler.getGame().getGameInfo().getScore());
+		handler.getWorld().getEntityManager().setPlayerIsDead(true);
 	}
-
 }

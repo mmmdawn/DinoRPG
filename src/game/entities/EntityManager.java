@@ -11,9 +11,10 @@ import game.Handler;
 import game.entities.creatures.Player;
 
 public class EntityManager {
-
-	private Handler handler;
 	private Player player;
+	private Handler handler;
+	private boolean playerIsDead;
+
 	private ArrayList<Entity> entities;
 	private Queue<Entity> newEntityQueue;
 	private Comparator<Entity> renderSorter = new Comparator<Entity>() {
@@ -25,10 +26,12 @@ public class EntityManager {
 	};
 	
 	public EntityManager(Handler handler, Player player) {
+		this.playerIsDead = false;
 		this.handler = handler;
 		this.player = player;
-		entities = new ArrayList<Entity>();
+
 		newEntityQueue = new LinkedList<Entity>();
+		entities = new ArrayList<Entity>();
 		addEntity(player);
 	}
 	
@@ -70,6 +73,17 @@ public class EntityManager {
 	public Player getPlayer() {
 		return player;
 	}
+
+
+	public boolean isPlayerIsDead() {
+		return playerIsDead;
+	}
+
+
+	public void setPlayerIsDead(boolean playerIsDead) {
+		this.playerIsDead = playerIsDead;
+	}
+
 
 	public ArrayList<Entity> getEntities() {
 		return entities;

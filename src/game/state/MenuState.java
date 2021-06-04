@@ -18,12 +18,13 @@ public class MenuState extends State{
 		super(handler);
 		uiManager = new UIManager(handler);
 		handler.getMouseManager().setUIManager(uiManager);
+
 		uiManager.addObject(new UIImageBackground(new Animation(100, Assets.background), 0, 0, 1366, 768));
 		uiManager.addObject(new UIImageBackground(new Animation(10000, Assets.bestScore), 20, 650, 346, 82));
 		uiManager.addObject(new UIImageButton(583, 536, 200, 81, Assets.button_play, new ClickListener() {
 			public void onClick() {
 				handler.getMouseManager().setUIManager(null);
-				State.setState(handler.getGame().gameState);
+				State.setState(new GameState(handler));
 			}
 		}));
 		uiManager.addObject(new UIImageButton(583, 637, 200, 81, Assets.button_exit, new ClickListener() {

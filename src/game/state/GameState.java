@@ -16,22 +16,21 @@ import game.gfx.Assets;
 import game.gfx.Text;
 
 public class GameState extends State{
-//	private Player player;
-	private World world;
-	private int lastScore;
 	private UIManager uiManager;
+	private int lastScore;
+	private World world;
 	
 	public GameState(Handler handler) {
 		super(handler);
-		uiManager = new UIManager(handler);
 		world = new World(handler, "res/worlds/world1.txt");
+		uiManager = new UIManager(handler);
 
 		uiManager.addObject(new UIImageBackground(new Animation(10000, Assets.score), 10, 10, 260, 40));
 		uiManager.addObject(new UIImageBackground(new Animation(10000, Assets.score), 10, 58, 260, 40));
 		
-		handler.setWorld(world);
-		handler.getGame().getGameInfo().setScore(0);
 		lastScore = handler.getGame().getGameInfo().getScore();
+		handler.getGame().getGameInfo().setScore(0);
+		handler.setWorld(world);
 	}
 
 	@Override
@@ -45,6 +44,8 @@ public class GameState extends State{
 			lastScore = newScore;
 		}
 		
+		if (handler.getWorld().getEntityManager().isPlayerIsDead() == true)
+			State.setState(new GameOverState(handler));
 	}
 
 	@Override
@@ -57,5 +58,4 @@ public class GameState extends State{
 		Text.drawString(g, score, 20, 38, false, Color.WHITE, Assets.font1);
 		Text.drawString(g, difficulty, 20, 85, false, Color.WHITE, Assets.font1);
 	}
-
 }
