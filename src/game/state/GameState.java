@@ -20,6 +20,7 @@ public class GameState extends State{
 	private UIManager uiManager;
 	private int lastScore;
 	private World world;
+	private long timer = 0, lastTime = 0;
 	
 	public GameState(Handler handler) {
 		super(handler);
@@ -47,13 +48,18 @@ public class GameState extends State{
 		
 		// player is dead ?
 		if (handler.getWorld().getEntityManager().isPlayerIsDead() == true) {
-			handler.getWorld().getMeteorGenerator().resetDifficulty();
-			State.setState(new GameOverState(handler));
-			try {
-				handler.getGame().getGameInfo().writeBestScore();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (lastTime == 0) lastTime = System.currentTimeMillis();
+			timer = System.currentTimeMillis();
+			if (timer - lastTime > 2000) {
+				lastTime = 0;
+				handler.getWorld().getMeteorGenerator().resetDifficulty();
+				State.setState(new GameOverState(handler));
+				try {
+					handler.getGame().getGameInfo().writeBestScore();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 	}

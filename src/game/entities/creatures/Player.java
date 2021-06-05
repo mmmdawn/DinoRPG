@@ -109,7 +109,7 @@ public class Player extends Creature {
 	}
 
 	public void die() {
-//		handler.getWorld().getEntityManager().getNewEntityQueue().add(new Tomb(handler, x, y));
+		handler.getWorld().getEntityManager().getNewEntityQueue().add(new Tomb(handler, x, y));
 		handler.getWorld().getEntityManager().setPlayerIsDead(true);
 	}
 }
