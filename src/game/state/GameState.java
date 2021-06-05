@@ -47,9 +47,8 @@ public class GameState extends State{
 		
 		// player is dead ?
 		if (handler.getWorld().getEntityManager().isPlayerIsDead() == true) {
-			State.setState(new GameOverState(handler));
 			handler.getWorld().getMeteorGenerator().resetDifficulty();
-
+			State.setState(new GameOverState(handler));
 			try {
 				handler.getGame().getGameInfo().writeBestScore();
 			} catch (IOException e) {

@@ -32,8 +32,9 @@ public class MeteorGenerator {
 	
 	public void resetDifficulty() {
 		spawn_delay = MAX_SPAWN_DELAY;
-		handler.getGame().getGameInfo().setDifficulty((int)(MAX_SPAWN_DELAY - spawn_delay)/50);
+		handler.getGame().getGameInfo().setDifficulty(0);
 	}
+
 	public void increaseDifficulty() {
 		if(spawn_delay == 0)
 			return;
