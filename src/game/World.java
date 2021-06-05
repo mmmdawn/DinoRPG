@@ -96,7 +96,6 @@ public class World {
 						entityManager.addEntity(new Rock1(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
 					else if (temp == 6)
 						entityManager.addEntity(new Rock2(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
-						
 				}
 			}
 		}

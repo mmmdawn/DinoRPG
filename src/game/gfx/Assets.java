@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 
 public class Assets {
 	public static final int NUMBER_OF_TILES = 10;
-	public static BufferedImage[] staticEntities;
 	
 	public static Font font1, font2, font3, font4, font5;
 	public static BufferedImage grass1, grass2, grass3, water, tomb, sand;
@@ -34,7 +33,6 @@ public class Assets {
 			font3 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 90);
 			font4 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 50);
 			font5 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 50);
-			staticEntities = new BufferedImage[256];
 			button_play  = new BufferedImage[2];
 			button_exit  = new BufferedImage[2];
 			button_back  = new BufferedImage[2];
@@ -164,13 +162,6 @@ public class Assets {
 			tree4 = ImageIO.read(new File("res/textures/tree4.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
-			
-			staticEntities[1] = tree1;
-			staticEntities[2] = tree2;
-			staticEntities[3] = tree3;
-			staticEntities[4] = tree4;
-			staticEntities[5] = rock1;
-			staticEntities[6] = rock2;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
