@@ -20,7 +20,11 @@ public class GameInfo {
 		try {
 			fileReader = new FileReader(file);
 		} catch (FileNotFoundException e) {
-			file.createNewFile();
+			if (!file.createNewFile()) {
+				System.out.println("Can not make file");
+				System.exit(0);
+			}
+
 			fileWriter = new FileWriter(file);
 			fileReader = new FileReader(file);
 			fileWriter.write(score);

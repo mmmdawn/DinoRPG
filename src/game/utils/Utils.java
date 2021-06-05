@@ -4,10 +4,11 @@ import java.io.BufferedReader;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Random;
 
 public class Utils {
-	private static Random random = new Random();
+	private Utils() {
+		throw new IllegalStateException("Utility class");
+	}
 	
 	public static String loadFileAsString(String path)  {
 		StringBuilder builder = new StringBuilder();
@@ -33,10 +34,6 @@ public class Utils {
 		}
 
 	}
-	
-//	public static int getRandomInteger(float min, float max) {
-//		return random.nextInt(max - min) + min;
-//	}
 	
 	public static float getRandomFloat(float min, float max) {
 		return (float) (Math.random() * (max - min) + min);

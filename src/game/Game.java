@@ -98,7 +98,7 @@ public class Game implements Runnable{
 		// TODO Auto-generated method stub
 		init();
 		int fps = 60;
-		double timePerTick = 1000000000/fps;
+		double timePerTick = (double)1000000000/fps;
 		double delta = 0;
 		long now;
 		long lastTime = System.nanoTime();
@@ -128,7 +128,9 @@ public class Game implements Runnable{
 		try {
 			thread.join();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			System.out.println("Interrupted");
+		    // Restore interrupted state...
+		    Thread.currentThread().interrupt();
 		}
 	}
 	
