@@ -64,6 +64,7 @@ public class World {
 		return t;
 	}
 	private void loadWorld(String path) {
+		int temp = 0;
 		String file = Utils.loadFileAsString(path);
 		String[] tokens = file.split("\\s+");
 		width = Utils.parseInt(tokens[0]);

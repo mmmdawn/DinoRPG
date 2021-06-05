@@ -19,6 +19,9 @@ public class Assets {
 	public static BufferedImage[] over;
 	public static BufferedImage[] bestScore, score;
 	public static BufferedImage[] coin;
+	public static String world = "res/worlds/world.txt";
+	public static String world1 = "res/worlds/world1.txt";
+	public static String world2 = "res/worlds/world2.txt";
 
 
 	public static void init() {
@@ -119,6 +122,8 @@ public class Assets {
 			playerIdleLeft[2] = ImageIO.read(new File("res/move/idleLeft3.png"));
 			playerIdleLeft[3] = ImageIO.read(new File("res/move/idleLeft4.png"));
 
+			tomb = ImageIO.read(new File("res/move/rip.png"));
+
 			meteor[0] = ImageIO.read(new File("res/meteor/meteor01.png"));
 			meteor[1] = ImageIO.read(new File("res/meteor/meteor02.png"));
 			meteor[2] = ImageIO.read(new File("res/meteor/meteor03.png"));
@@ -141,16 +146,15 @@ public class Assets {
 			meteor[19] = ImageIO.read(new File("res/meteor/meteor20.png"));
 			meteor[20] = ImageIO.read(new File("res/meteor/meteor21.png"));
 			
-			tomb = ImageIO.read(new File("res/move/rip.png"));
+			grass1 = ImageIO.read(new File("res/textures/grass1.png"));
+			grass2 = ImageIO.read(new File("res/textures/grass2.png"));
+			grass3 = ImageIO.read(new File("res/textures/grass3.png"));
+			water = ImageIO.read(new File("res/textures/water.png"));
 			sand = ImageIO.read(new File("res/textures/sand.png"));
 			tree1 = ImageIO.read(new File("res/textures/tree1.png"));
 			tree2 = ImageIO.read(new File("res/textures/tree2.png"));
 			tree3 = ImageIO.read(new File("res/textures/tree3.png"));
 			tree4 = ImageIO.read(new File("res/textures/tree4.png"));
-			grass1 = ImageIO.read(new File("res/textures/grass1.png"));
-			grass2 = ImageIO.read(new File("res/textures/grass2.png"));
-			grass3 = ImageIO.read(new File("res/textures/grass3.png"));
-			water = ImageIO.read(new File("res/textures/water.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
 		} catch (IOException e) {

@@ -23,7 +23,7 @@ public class GameState extends State{
 	
 	public GameState(Handler handler) {
 		super(handler);
-		world = new World(handler, "res/worlds/world.txt");
+		world = new World(handler, Assets.world2);
 		uiManager = new UIManager(handler);
 
 		uiManager.addObject(new UIImageBackground(new Animation(10000, Assets.score), 10, 10, 260, 40));
