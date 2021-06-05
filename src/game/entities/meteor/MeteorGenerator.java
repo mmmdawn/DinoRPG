@@ -36,9 +36,12 @@ public class MeteorGenerator {
 	}
 
 	public void increaseDifficulty() {
-		if(spawn_delay == 0)
-			return;
-		spawn_delay -= 50;
-		handler.getGame().getGameInfo().setDifficulty((int)(MAX_SPAWN_DELAY - spawn_delay)/50);
+		if (spawn_delay >= 100) {
+			spawn_delay -= 50;
+			handler.getGame().getGameInfo().setDifficulty((int)(MAX_SPAWN_DELAY - spawn_delay)/50);
+		} else if (spawn_delay > 0) {
+			spawn_delay -= 10;
+			handler.getGame().getGameInfo().setDifficulty(handler.getGame().getGameInfo().getDifficulty() + 1);
+		}
 	}
 }
