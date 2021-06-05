@@ -8,6 +8,7 @@ import game.entities.items.CoinGenerator;
 import game.entities.meteor.Meteor;
 import game.entities.meteor.MeteorGenerator;
 import game.entities.statics.*;
+import game.gfx.Assets;
 import game.tiles.Tile;
 import game.utils.Utils;
 
@@ -75,7 +76,28 @@ public class World {
 		tiles = new int[width][height];
 		for(int y = 0; y < height; y++) {
 			for(int x = 0; x < width; x++) {
-				tiles[x][y] = Utils.parseInt(tokens[(x+y*width) +4]);
+				temp = Utils.parseInt(tokens[(x+y*width) +4]);
+				if (temp < 10) {
+					tiles[x][y] = temp;
+					continue;
+				} else {
+					tiles[x][y] = temp % Assets.NUMBER_OF_TILES;
+					temp = (int) temp / Assets.NUMBER_OF_TILES;
+					
+					if (temp == 1) 
+						entityManager.addEntity(new Tree1(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
+					else if (temp == 2)
+						entityManager.addEntity(new Tree2(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
+					else if (temp == 3)
+						entityManager.addEntity(new Tree3(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
+					else if (temp == 4)
+						entityManager.addEntity(new Tree4(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
+					else if (temp == 5)
+						entityManager.addEntity(new Rock1(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
+					else if (temp == 6)
+						entityManager.addEntity(new Rock2(handler, (float)x * Tile.TILEWIDTH, (float)y * Tile.TILEHEIGHT));
+						
+				}
 			}
 		}
 	}

@@ -8,6 +8,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Assets {
+	public static final int NUMBER_OF_TILES = 10;
+	public static BufferedImage[] staticEntities;
+	
 	public static Font font1, font2, font3, font4, font5;
 	public static BufferedImage grass1, grass2, grass3, water, tomb, sand;
 	public static BufferedImage tree1, tree2, tree3, tree4 ;
@@ -31,6 +34,7 @@ public class Assets {
 			font3 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 90);
 			font4 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 50);
 			font5 = FontLoader.loadFont("res/fonts/pixeboy.ttf", 50);
+			staticEntities = new BufferedImage[256];
 			button_play  = new BufferedImage[2];
 			button_exit  = new BufferedImage[2];
 			button_back  = new BufferedImage[2];
@@ -146,17 +150,27 @@ public class Assets {
 			meteor[19] = ImageIO.read(new File("res/meteor/meteor20.png"));
 			meteor[20] = ImageIO.read(new File("res/meteor/meteor21.png"));
 			
+			//Tiles
 			grass1 = ImageIO.read(new File("res/textures/grass1.png"));
 			grass2 = ImageIO.read(new File("res/textures/grass2.png"));
 			grass3 = ImageIO.read(new File("res/textures/grass3.png"));
 			water = ImageIO.read(new File("res/textures/water.png"));
 			sand = ImageIO.read(new File("res/textures/sand.png"));
+			
+			//static Entities
 			tree1 = ImageIO.read(new File("res/textures/tree1.png"));
 			tree2 = ImageIO.read(new File("res/textures/tree2.png"));
 			tree3 = ImageIO.read(new File("res/textures/tree3.png"));
 			tree4 = ImageIO.read(new File("res/textures/tree4.png"));
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
+			
+			staticEntities[1] = tree1;
+			staticEntities[2] = tree2;
+			staticEntities[3] = tree3;
+			staticEntities[4] = tree4;
+			staticEntities[5] = rock1;
+			staticEntities[6] = rock2;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
