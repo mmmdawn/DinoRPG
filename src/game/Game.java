@@ -25,14 +25,11 @@ public class Game implements Runnable{
 	private Thread thread;
 	private String title;
 	
-	//input
 	private KeyManager keyManager;
 	private MouseManager mouseManager;
 	
-	//Camera
 	private GameCamera gameCamera;
 	
-	//Handler
 	private Handler handler;
 	
 	public Game(String title, int width, int height) {
@@ -47,7 +44,6 @@ public class Game implements Runnable{
 		try {
 			gameInfo = new GameInfo(handler);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -63,7 +59,6 @@ public class Game implements Runnable{
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
 		State.setState(new MenuState(handler));
-//		State.setState(new GameOverState(handler));
 		
 	}
 	
@@ -82,20 +77,16 @@ public class Game implements Runnable{
 		}
 		
 		graphic = bufferStrategy.getDrawGraphics();
-		// Clear Screen
 		graphic.clearRect(0, 0, width, height);
 		
-		//Draw here
 		if(State.getState() != null)
 			State.getState().render(graphic);
-		//End Drawing!
 		bufferStrategy.show();
 		graphic.dispose();
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		init();
 		int fps = 60;
 		double timePerTick = (double)1000000000/fps;
@@ -129,7 +120,6 @@ public class Game implements Runnable{
 			thread.join();
 		} catch (InterruptedException e) {
 			System.out.println("Interrupted");
-		    // Restore interrupted state...
 		    Thread.currentThread().interrupt();
 		}
 	}
