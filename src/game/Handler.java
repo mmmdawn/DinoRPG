@@ -1,6 +1,5 @@
 package game;
 
-import game.display.Display;
 import game.gfx.GameCamera;
 import game.input.KeyManager;
 import game.input.MouseManager;

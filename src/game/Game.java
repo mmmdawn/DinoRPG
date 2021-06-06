@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.io.IOException;
 
-import game.display.Display;
 import game.gfx.Assets;
 import game.gfx.GameCamera;
 import game.input.KeyManager;
