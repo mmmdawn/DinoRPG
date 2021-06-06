@@ -19,7 +19,6 @@ public class Utils {
 				builder.append(line +"\n");
 			br.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return builder.toString();

@@ -5,9 +5,11 @@ import java.awt.image.BufferedImage;
 
 public abstract class Tile {
 	// Static variables
-	public static final int TILEWIDTH = 64, TILEHEIGHT = 64;
-	public static Tile[] tiles = new Tile[256];
-	public static Tile water = new WaterTile(0);
+	public static final int TILEWIDTH = 64;
+	public static final int TILEHEIGHT = 64;
+
+	public static final Tile[] tiles = new Tile[256];
+	public static final Tile water = new WaterTile(0);
 	public static Tile sand = new SandTile(1);
 	public static Tile grassTile1 = new GrassTile1(2);
 	public static Tile grassTile2 = new GrassTile2(3);

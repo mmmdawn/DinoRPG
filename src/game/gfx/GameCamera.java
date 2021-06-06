@@ -17,17 +17,17 @@ public class GameCamera {
 		if(xOffset < 0) {
 			xOffset = 0;
 		}else if(xOffset > handler.getWorld().getWidth() * Tile.TILEWIDTH - handler.getWidth()) {
-			xOffset = handler.getWorld().getWidth() * Tile.TILEWIDTH - handler.getWidth();
+			xOffset = (float) handler.getWorld().getWidth() * Tile.TILEWIDTH - handler.getWidth();
 		}
 		if(yOffset < 0) {
 			yOffset = 0;
 		}else if(yOffset > handler.getWorld().getHeight() * Tile.TILEHEIGHT - handler.getHeight()) {
-			yOffset = handler.getWorld().getHeight() * Tile.TILEHEIGHT - handler.getHeight();
+			yOffset = (float) handler.getWorld().getHeight() * Tile.TILEHEIGHT - handler.getHeight();
 		}
 	}
 	public void setCameraPosition(Entity e) {
-		xOffset = e.getX() -handler.getWidth()/2 + e.getWidth()/2;
-		yOffset = e.getY() - handler.getHeight()/2 + e.getHeight()/2;
+		xOffset = e.getX() -handler.getWidth()/2f + e.getWidth()/2f;
+		yOffset = e.getY() - handler.getHeight()/2f + e.getHeight()/2f;
 		fixEdgePosition();
 	}
 	public void move(float xAmt, float yAmt) {
