@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import game.utils.FontLoader;
+
 public class Assets {
 	public static final int NUMBER_OF_TILES = 10;
 	
