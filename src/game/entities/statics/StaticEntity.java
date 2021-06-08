@@ -22,14 +22,11 @@ public abstract class StaticEntity extends Entity {
 
 	@Override
 	public void render(Graphics g) {
-		// TODO Auto-generated method stub
 		g.drawImage(img ,(int)(x - handler.getGameCamera().getxOffset()), (int)(y - handler.getGameCamera().getyOffset()), width, height, null);
 	}
 
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
-//		handler.getWorld().getEntityManager().addEntity(new Coin(handler, this.x, this.y));
 		handler.getWorld().getEntityManager().getNewEntityQueue().add(new Coin(handler, this.x, this.y));
 	}
 	

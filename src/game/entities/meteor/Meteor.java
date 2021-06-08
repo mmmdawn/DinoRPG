@@ -24,7 +24,6 @@ public class Meteor extends Entity{
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
 		animation.tick();		
 		if (animation.isEnd()) {
 			this.hurt(1);
@@ -51,6 +50,5 @@ public class Meteor extends Entity{
 
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
 	}
 }

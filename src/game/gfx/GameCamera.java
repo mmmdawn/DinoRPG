@@ -7,6 +7,7 @@ import game.tiles.Tile;
 public class GameCamera {
 	private float xOffset, yOffset;
 	private Handler handler;
+
 	public GameCamera(Handler handler, float xOffset, float yOffset) {
 		this.handler = handler;
 		this.xOffset = xOffset;

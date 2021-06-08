@@ -165,7 +165,6 @@ public class Assets {
 			rock1 = ImageIO.read(new File("res/textures/rock1.png"));
 			rock2 = ImageIO.read(new File("res/textures/rock2.png"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

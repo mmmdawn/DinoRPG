@@ -11,7 +11,6 @@ public class GrassTile1 extends Tile {
 
 	@Override
 	public boolean isObstacle() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	

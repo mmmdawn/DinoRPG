@@ -11,7 +11,6 @@ public class SandTile extends Tile {
 
 	@Override
 	public boolean isObstacle() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 	

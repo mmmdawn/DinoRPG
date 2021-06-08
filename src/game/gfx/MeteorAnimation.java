@@ -9,12 +9,10 @@ public class MeteorAnimation extends Animation {
 
 	public MeteorAnimation(int speed, BufferedImage[] frames) {
 		super(speed, frames);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
 		
