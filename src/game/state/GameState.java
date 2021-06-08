@@ -57,7 +57,6 @@ public class GameState extends State{
 				try {
 					handler.getGame().getGameInfo().writeBestScore();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

@@ -12,14 +12,12 @@ public abstract class Item extends Entity{
 	protected abstract void makeEffect();
 	
 	public Item(Animation animation, Handler handler, float x, float y, int width, int height) {
-		// TODO Auto-generated constructor stub
 		super(handler, x, y, width, height);
 		this.animation = animation;
 	}
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
 		animation.tick();
 		if (handler.getWorld().getEntityManager().getPlayer().getCollisionBounds(0f, 0f).intersects(this.getCollisionBounds(0f, 0f))) {
 			this.hurt(1);
@@ -37,7 +35,6 @@ public abstract class Item extends Entity{
 
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
 		makeEffect();
 	}
 

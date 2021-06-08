@@ -25,7 +25,6 @@ public class MeteorGenerator {
 			yOffset = handler.getGameCamera().getyOffset();
 			x = game.utils.Utils.getRandomFloat(xOffset, xOffset + 1366);
 			y = game.utils.Utils.getRandomFloat(yOffset, yOffset + 768) - 500;
-//			System.out.println(String.valueOf(x) + ", " + String.valueOf(y));
 			return new Meteor(handler, x, y);
 		} else return null;
 	}
