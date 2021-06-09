@@ -22,7 +22,7 @@ public class GameOverState extends State {
 			@Override
 			public void onClick() {
 				handler.getMouseManager().setUIManager(null);
-				State.setState(new MenuState(handler));
+				handler.getGame().getStateManager().setState(new MenuState(handler));
 				handler.getGame().getGameInfo().setScore(0);
 			}
 		});

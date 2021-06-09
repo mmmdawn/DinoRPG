@@ -12,6 +12,7 @@ import game.state.GameOverState;
 import game.state.GameState;
 import game.state.MenuState;
 import game.state.State;
+import game.state.StateManager;
 
 public class Game implements Runnable{
 
@@ -23,6 +24,7 @@ public class Game implements Runnable{
 	private Display display;
 	private Thread thread;
 	private String title;
+	private StateManager stateManager;
 	
 	private KeyManager keyManager;
 	private MouseManager mouseManager;
@@ -37,6 +39,7 @@ public class Game implements Runnable{
 		this.title = title;
 		keyManager = new KeyManager();
 		mouseManager = new MouseManager();		
+		stateManager = new StateManager();
 	}
 	
 	private void init() {
@@ -57,15 +60,15 @@ public class Game implements Runnable{
 		
 		handler = new Handler(this);
 		gameCamera = new GameCamera(handler, 0, 0);
-		State.setState(new MenuState(handler));
+		stateManager.setState(new MenuState(handler));
 		
 	}
 	
 	private void tick() {
 		keyManager.tick();
 		gameInfo.tick();
-		if(State.getState() != null)
-			State.getState().tick();
+		if(stateManager.getState() != null)
+			stateManager.getState().tick();
 	};
 	
 	private void render() {
@@ -78,8 +81,8 @@ public class Game implements Runnable{
 		graphic = bufferStrategy.getDrawGraphics();
 		graphic.clearRect(0, 0, width, height);
 		
-		if(State.getState() != null)
-			State.getState().render(graphic);
+		if(stateManager.getState() != null)
+			stateManager.getState().render(graphic);
 		bufferStrategy.show();
 		graphic.dispose();
 	}
@@ -136,6 +139,11 @@ public class Game implements Runnable{
 		return gameCamera;
 	}
 	
+	
+	public StateManager getStateManager() {
+		return stateManager;
+	}
+
 	public GameInfo getGameInfo() {
 		return this.gameInfo;
 	}

@@ -53,7 +53,7 @@ public class GameState extends State{
 			if (timer - lastTime > 2000) {
 				lastTime = 0;
 				handler.getWorld().getMeteorGenerator().resetDifficulty();
-				State.setState(new GameOverState(handler));
+				handler.getGame().getStateManager().setState(new GameOverState(handler));
 				try {
 					handler.getGame().getGameInfo().writeBestScore();
 				} catch (IOException e) {
